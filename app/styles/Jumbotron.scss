@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  padding: 1em;
   // height: 70vh;
   
   .jumbotron__container {
@@ -20,8 +21,19 @@
     .console {
       display: block;
       text-align: center;
+      letter-spacing: 1em;
+      height: 2em;
       #text {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        font-family: consolas;
+      }
+      #cursor{
+        animation-name: cursor;
+        animation-timing-function: linear;
+        animation-duration: .4s;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
       }
     }
   }
@@ -32,5 +44,13 @@
         width: 100%;
         object-fit: cover;
       }
+  }
+}
+@keyframes cursor {
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
   }
 }

@@ -1,54 +1,68 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { SourceMapDevToolPlugin } = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+const port = process.env.PORT || 5000;
 
 module.exports = {
-
-  mode: "production",
-  entry: "./app/index.js",
-
+  mode: 'development',
+  entry: './app/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: "[name].js",
+    filename: '[name].[hash].js',
+    publicPath: '/',
   },
-
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './app/index.html',
+    }),
+    new MiniCssExtractPlugin(),
+    new SourceMapDevToolPlugin({
+      filename: '[file].map',
+    }),
+    new ESLintPlugin(),
+  ],
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-        options: {
-          presets: [[
-            '@babel/preset-react',
-            {
-              runtime: 'automatic'
-            }
-          ]]
-        }
-      },{
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/react'],
+          },
+        },
+      }, {
         test: /\.(css|scss|sass)$/,
         use: [
+          MiniCssExtractPlugin.loader,
           // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
+          'css-loader',
           // Compiles Sass to CSS
-          "sass-loader"
-        ]
-      },{
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader'
-      }
-    ]
+          // 'style-loader',
+          // Translates CSS into CommonJS
+          'sass-loader',
+        ],
+      }, {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: 'file-loader',
+      },
+    ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './app/index.html'
-    })
-  ],
   devServer: {
+    port,
     open: true,
-    port: 5000
-  }
-}
+    historyApiFallback: true,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.css', '.scss', '.sass'],
+    modules: [
+      'node_modules',
+    ],
+  },
+};
