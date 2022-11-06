@@ -1,102 +1,28 @@
-import React, { useEffect, useRef } from 'react';
-import '../../styles/Carousel.scss';
-// import img from '../../assets/img/leonardo_torrealba.png';
-import ArrowRight from '../../assets/icons/iconmonstr-arrow-37.svg';
-import ArrowLeft from '../../assets/icons/iconmonstr-arrow-79.svg';
+import React from 'react';
+import OwlCarousel from 'react-owl-carousel3';
+import Slider from './Slider';
 
 export default function Carousel() {
-  const SliderRef = useRef(null);
-  const IntervalRef = useRef(null);
-  const sliderRight = () => {
-    if (SliderRef.current.children.length > 0) {
-      // Get first element
-      const FirstChildren = SliderRef.current.children[0];
-
-      // Send Transition to Container
-      SliderRef.current.style.transition = 'all linear .7s';
-      // Move Slider
-      const SliderWith = SliderRef.current.children[0].offsetWidth;
-      SliderRef.current.style.transform = `translateX(-${SliderWith}px)`;
-
-      const resetSlider = () => {
-        // Reset position Slider
-        SliderRef.current.style.transition = 'none';
-        SliderRef.current.style.transform = 'translateX(0)';
-
-        // Push first element to the final list
-        SliderRef.current.appendChild(FirstChildren);
-
-        SliderRef.current.removeEventListener('transitionend', resetSlider);
-      };
-      SliderRef.current.addEventListener('transitionend', resetSlider);
-    }
-  };
-
-  const sliderLeft = () => {
-    if (SliderRef.current.children.length > 0) {
-      // Get last children
-      const LastChildren = SliderRef.current.children[SliderRef.current.children.length - 1];
-      SliderRef.current.insertBefore(LastChildren, SliderRef.current.children[0]);
-      // Move Slider
-      SliderRef.current.style.transition = 'none';
-      const SliderWith = SliderRef.current.children[0].offsetWidth;
-      SliderRef.current.style.transform = `translateX(-${SliderWith}px)`;
-
-      setTimeout(() => {
-        SliderRef.current.style.transition = 'all linear .7s';
-        SliderRef.current.style.transform = 'translateX(0)';
-      }, 30);
-    }
-  };
-
-  useEffect(() => {
-    IntervalRef.current = setInterval(() => {
-      sliderRight();
-    }, 4000);
-
-    SliderRef.current.addEventListener('mouseenter', () => {
-      clearInterval(IntervalRef.current);
-    });
-    SliderRef.current.addEventListener('mouseleave', () => {
-      IntervalRef.current = setInterval(() => {
-        sliderRight();
-      }, 4000);
-    });
-
-    return () => {
-      clearInterval(IntervalRef.current);
-    };
-  }, []);
-
   return (
-    <div className="carousel">
-      <div className="carousel-slider" ref={SliderRef}>
-        <div className="carousel-slider__item">
-          Primero imagen
-        </div>
-        <div className="carousel-slider__item">
-          Segunda Imagne
-        </div>
-        <div className="carousel-slider__item">
-          Tercera Imagne
-        </div>
-      </div>
-      <div className="carousel-controllers">
-        <button
-          className="carousel-controllers__arrow-left"
-          onClick={sliderLeft}
-          type="submit"
-        >
-          <img src={ArrowLeft} alt="" />
-        </button>
-        <button
-          className="carousel-controllers__arrow-right"
-          onClick={sliderRight}
-          type="submit"
-        >
-          <img src={ArrowRight} alt="" />
-        </button>
-      </div>
+    <div className="max-w-7xl mx-auto">
+      <OwlCarousel
+        items={1}
+        loop
+        nav
+        navClass={[
+          'text-white absolute top-0 left-0 bg-gradient-to-r from-dark to-transparent h-full p-2 flex items-center text-2xl hover:to-dark hover:text-4xl hover:px-5 cursor-default transition-all font-bold',
+          'text-white absolute top-0 right-0 bg-gradient-to-l from-dark to-transparent h-full p-2 flex items-center text-2xl hover:to-dark hover:text-4xl hover:px-5 cursor-default transition-all font-bold',
+        ]}
+        navText={[
+          '<',
+          '>',
+        ]}
+      >
+        <Slider number={1} />
+        <Slider number={2} />
+        <Slider number={3} />
+        <Slider number={4} />
+      </OwlCarousel>
     </div>
   );
 }

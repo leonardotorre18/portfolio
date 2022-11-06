@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { SourceMapDevToolPlugin } = require('webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 module.exports = {
   mode: 'development',
@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './app/index.html',
+      template: './public/index.html',
     }),
     new MiniCssExtractPlugin(),
     new SourceMapDevToolPlugin({
@@ -38,14 +38,17 @@ module.exports = {
           },
         },
       }, {
-        test: /\.(css|scss|sass)$/,
+        test: /\.(css|scss|sass)$/i,
+        include: path.resolve(__dirname, 'app'),
         use: [
+          // 'style-loader',
           MiniCssExtractPlugin.loader,
           // Creates `style` nodes from JS strings
           'css-loader',
           // Compiles Sass to CSS
           // 'style-loader',
           // Translates CSS into CommonJS
+          'postcss-loader',
           'sass-loader',
         ],
       }, {
@@ -56,7 +59,7 @@ module.exports = {
   },
   devServer: {
     port,
-    open: true,
+    // open: true,
     historyApiFallback: true,
   },
   resolve: {

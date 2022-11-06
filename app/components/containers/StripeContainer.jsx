@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/StripeContainer.scss';
+// import '../../styles/StripeContainer.scss';
 import PropTypes from 'prop-types';
 
 export default function StripeContainer({ children }) {
