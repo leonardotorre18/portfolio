@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { FiDownload } from 'react-icons/fi';
 import img from '../../assets/img/leonardo_torrealba.png';
+import SkillsList from './SkillsList';
 import writeTextAnimation from '../../utils/writeTextAnimation';
 
 export default function Jumbotron() {
@@ -16,12 +18,11 @@ export default function Jumbotron() {
   return (
     <div className="bg-dark bg-opacity-70 w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center px-8 max-w-7xl mx-auto">
-        {/* <Particles /> */}
         <div className="w-full max-h-96">
           <motion.img
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 1 }}
+            transition={{ delay: 0.4, duration: 1 }}
             className="object-cover h-full mx-auto"
             src={img}
             alt="Leonardo Torrealba"
@@ -30,7 +31,7 @@ export default function Jumbotron() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 1 }}
+          transition={{ delay: 0.2, duration: 1 }}
           className="w-full flex flex-col justify-center items-center py-8 md:row-start-1"
         >
           <h1 className="text-main font-second text-4xl font-bold text-center">Leonardo Torrealba</h1>
@@ -41,13 +42,15 @@ export default function Jumbotron() {
           <div className="mt-6">
             <button
               type="button"
-              className="bg-light text-dark px-4 py-1 rounded hover:bg-dark hover:text-light transition-colors"
+              className="bg-light text-dark px-4 py-1 rounded hover:bg-dark hover:text-light transition-colors flex justify-center gap-3 items-center"
             >
-              Download CV
+              Descargar CV
+              <FiDownload />
             </button>
           </div>
         </motion.div>
       </div>
+      <SkillsList />
     </div>
   );
 }

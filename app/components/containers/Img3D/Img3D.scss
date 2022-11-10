@@ -1,0 +1,13 @@
+
+.container-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  img{
+    transform: perspective(1000px) rotateY(-10deg) rotateZ(-5deg) rotateX(10deg) translateZ(-100px);
+  }
+  &:hover {
+    img{
+      transform: perspective(1000px) rotateY(0);
+    }
+  }
+}

@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { SourceMapDevToolPlugin } = require('webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const port = process.env.PORT || 3000;
 
@@ -13,6 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[hash].js',
     publicPath: '/',
+    clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -24,6 +26,16 @@ module.exports = {
       filename: '[file].map',
     }),
     new ESLintPlugin(),
+    new CopyWebpackPlugin(
+      {
+        patterns: [
+          {
+            from: './public/assets',
+            to: './assets',
+          },
+        ],
+      },
+    ),
   ],
   devtool: 'eval-source-map',
   module: {

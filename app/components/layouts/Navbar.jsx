@@ -29,10 +29,10 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl">
 
         <ul className="flex font-first text-light text-3xl gap-3 w-full justify-end tracking-[-.2em]">
-          <Link to="/">Home</Link>
-          <Link to="/projects">Projects</Link>
+          <Link to="/">Inicio</Link>
+          <Link to="/projects">Proyectos</Link>
           {/* <li>Sobre Mí</li> */}
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">Contacto</Link>
         </ul>
       </nav>
     </header>

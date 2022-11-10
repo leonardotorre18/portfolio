@@ -1,5 +1,7 @@
+/* eslint-disable react/require-default-props */
 import { motion } from 'framer-motion';
 import React from 'react';
+// import PropTypes from 'prop-types';
 
 const skills = [
   { id: 1, text: 'HTML, CSS' },
@@ -28,7 +30,7 @@ function Item({ title = 'React' }) {
 
 export default function SkillsList() {
   return (
-    <div className="bg-dark bg-opacity-70 px-6 pb-8 max-w-4xl mx-auto">
+    <div className="px-6 pb-8 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,3 +42,7 @@ export default function SkillsList() {
     </div>
   );
 }
+
+// Item.propTypes = {
+//   title: PropTypes.array,
+// };

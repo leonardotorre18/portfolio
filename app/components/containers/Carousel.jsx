@@ -1,6 +1,7 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel3';
 import Slider from './Slider';
+import projects from '../../api/projects.json';
 
 export default function Carousel() {
   return (
@@ -18,10 +19,7 @@ export default function Carousel() {
           '>',
         ]}
       >
-        <Slider number={1} />
-        <Slider number={2} />
-        <Slider number={3} />
-        <Slider number={4} />
+        { projects.map(({ id, title, img }) => <Slider id={id} title={title} img={img} />) }
       </OwlCarousel>
     </div>
   );
