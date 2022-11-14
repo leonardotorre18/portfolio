@@ -28,7 +28,7 @@ export default function Project({
       className="p-3 max-w-7xl mx-auto"
     >
       <h3 className="text-light font-first text-4xl">{title}</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="p-2">
           <div className="flex flex-wrap gap-3">
             <h4 className="mr-2 text-gray-500 mb-4">Tecnologías:</h4>
@@ -62,34 +62,9 @@ export default function Project({
           </div>
         </div>
         <div className="p-10 max-w-md">
-          <Img3D img={img} />
+          <Img3D img={img[0]} />
         </div>
       </div>
     </motion.div>
   );
 }
-
-// Item.defaultProps = {
-//   title: '',
-// };
-// Item.protoTypes = {
-//   title: PropTypes.string,
-// };
-
-// Project.defaultProps = {
-//   id: 0,
-//   title: '',
-//   img: '',
-//   technologies: [],
-//   description: '',
-//   links: {},
-// };
-
-// Project.propTypes = {
-//   id: PropTypes.number,
-//   title: PropTypes.string,
-//   img: PropTypes.string,
-//   technologies: PropTypes.array,
-//   description: PropTypes.string,
-//   links: PropTypes.object,
-// };

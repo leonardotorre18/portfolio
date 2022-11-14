@@ -19,6 +19,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer components {
+  input {
+    @apply outline-none;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

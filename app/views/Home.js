@@ -1,6 +1,7 @@
 import React from 'react';
 import Jumbotron from '../components/layouts/Jumbotron';
 import Carousel from '../components/containers/Carousel';
+import AboutMe from '../components/layouts/AboutMe';
 
 export default function Home() {
   return (
@@ -14,12 +15,13 @@ export default function Home() {
         </div>
         <Carousel />
       </section>
-      <section className="h-96">
+      <section>
         <div className="bg-gradient-to-r from-main to-transparent">
           <h2 className="font-first tracking-[-.2em] text-4xl max-w-7xl mx-auto px-4">
             Acerca de mí
           </h2>
         </div>
+        <AboutMe />
       </section>
     </div>
   );

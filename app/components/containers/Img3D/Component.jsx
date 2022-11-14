@@ -1,5 +1,5 @@
 import React from 'react';
-import './Img3D.scss';
+// import './Img3D.scss';
 // import PropTypes from 'prop-types';
 
 export default function Img3D({ img }) {

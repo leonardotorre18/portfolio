@@ -19,7 +19,7 @@ export default function Carousel() {
           '>',
         ]}
       >
-        { projects.map(({ id, title, img }) => <Slider id={id} title={title} img={img} />) }
+        { projects.map(({ id, title, img }) => <Slider id={id} title={title} img={img[1]} />) }
       </OwlCarousel>
     </div>
   );
