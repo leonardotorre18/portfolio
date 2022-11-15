@@ -3,7 +3,6 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { BsFillFileEarmarkCodeFill } from 'react-icons/bs';
 import { AiOutlineFullscreen } from 'react-icons/ai';
-import Img3D from './Img3D/Component';
 
 function Item({ title }) {
   return (
@@ -62,7 +61,16 @@ export default function Project({
           </div>
         </div>
         <div className="p-10 max-w-md">
-          <Img3D img={img[0]} />
+          <div
+            className="w-full"
+          >
+            <img
+              className="object-cover w-full transition-all duration-700"
+              id="imagen"
+              src={img[0]}
+              alt="Logo Generico"
+            />
+          </div>
         </div>
       </div>
     </motion.div>

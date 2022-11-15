@@ -20,8 +20,8 @@ html {
 }
 
 @layer components {
-  input {
-    @apply outline-none;
+  input, textarea {
+    @apply outline-none resize-none;
   }
 }
 

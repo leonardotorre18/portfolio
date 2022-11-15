@@ -9,7 +9,11 @@ export default function Root() {
     <div>
       <BackgroundPage />
       <Navbar />
-      <div className="min-h-screen">
+      <div
+        style={{
+          minHeight: '80vh',
+        }}
+      >
         <Outlet />
       </div>
       <Footer />
