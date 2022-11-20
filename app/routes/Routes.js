@@ -1,29 +1,19 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import Error from '../views/Error';
+import { AnimatePresence } from 'framer-motion';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from '../views/Home';
 import Projects from '../views/Projects';
 import Contact from '../views/Contact';
-import Root from '../views/Root';
 
-export default createBrowserRouter([
-  {
-    path: '/',
-    element: (<Root />),
-    errorElement: (<Error />),
-    children: [
-      {
-        index: true,
-        element: (<Home />),
-      },
-      {
-        path: 'projects',
-        element: (<Projects />),
-      },
-      {
-        path: 'contact',
-        element: (<Contact />),
-      },
-    ],
-  },
-]);
+export default function Navigation() {
+  const location = useLocation();
+  return (
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/projects" element={<Projects />} />
+        <Route exact path="/contact" element={<Contact />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}

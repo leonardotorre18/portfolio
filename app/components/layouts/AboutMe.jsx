@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { BsLinkedin, BsGithub, BsInstagram } from 'react-icons/bs';
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import ImgPerfil from '../../assets/img/perfil.jpg';
@@ -37,12 +37,12 @@ export default function AboutMe() {
                 onClick={() => window.open('https://github.com/leonardotorre18')}
                 className="cursor-pointer"
               />
-              <BsInstagram />
+              {/* <BsInstagram /> */}
             </div>
           </div>
         </div>
         <div className="px-4 py-9 flex justify-center">
-          <Link to="/contact">
+          <Link to="/contact#cosa">
             <button
               className="text-white bg-main p-2 rounded flex items-center gap-2 hover:text-dark hover:bg-light transition-colors"
               type="button"

@@ -23,6 +23,9 @@ html {
   input, textarea {
     @apply outline-none resize-none;
   }
+  .input {
+    @apply p-2 w-full text-dark font-bold text-opacity-100 bg-light;
+  }
 }
 
 ::-webkit-scrollbar {

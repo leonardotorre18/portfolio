@@ -40,13 +40,14 @@ export default function Jumbotron() {
             <span id="cursor">_</span>
           </div>
           <div className="mt-6">
-            <button
-              type="button"
+            <a
+              href="/assets/pdf/CV_Leonardo.pdf"
+              download="CV_Leonardo.pdf"
               className="bg-light text-dark px-4 py-1 rounded hover:bg-dark hover:text-light transition-colors flex justify-center gap-3 items-center"
             >
-              Descargar CV
+              Descargar Resume
               <FiDownload />
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

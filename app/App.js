@@ -1,9 +1,10 @@
-import React from 'react';
-import { RouterProvider } from 'react-router';
-import Routes from './routes/Routes';
+import React, { Suspense } from 'react';
+import Root from './views/Root';
 
 export default function App() {
   return (
-    <RouterProvider router={Routes} />
+    <Suspense fallback={null}>
+      <Root />
+    </Suspense>
   );
 }

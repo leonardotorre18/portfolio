@@ -8,7 +8,7 @@ export default function BackgroundPage() {
     <div
       className="fixed -z-10 w-full h-full bg-dark top-0 left-0"
     >
-      <Canvas className="blur-2xl">
+      <Canvas className="blur-xl">
         <mesh scale={1}>
           {/* <OrbitControls /> */}
           <ambientLight intensity={0.3} />
