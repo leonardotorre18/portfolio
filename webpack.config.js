@@ -51,7 +51,7 @@ module.exports = {
         },
       }, {
         test: /\.(css|scss|sass)$/i,
-        include: path.resolve(__dirname, 'app'),
+        // include: path.resolve(__dirname, 'app'),
         use: [
           // 'style-loader',
           MiniCssExtractPlugin.loader,

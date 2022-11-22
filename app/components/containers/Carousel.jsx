@@ -1,26 +1,36 @@
 import React from 'react';
-import OwlCarousel from 'react-owl-carousel3';
-import Slider from './Slider';
-import projects from '../../api/projects.json';
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import Slider from './Slider';
+import templates from '../../api/templates.json';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function Carousel() {
   return (
     <div className="max-w-7xl mx-auto">
-      <OwlCarousel
-        items={1}
-        loop
-        nav
-        navClass={[
-          'text-white absolute top-0 left-0 bg-gradient-to-r from-dark to-transparent h-full p-2 flex items-center text-2xl hover:to-dark hover:text-4xl hover:px-5 cursor-default transition-all font-bold',
-          'text-white absolute top-0 right-0 bg-gradient-to-l from-dark to-transparent h-full p-2 flex items-center text-2xl hover:to-dark hover:text-4xl hover:px-5 cursor-default transition-all font-bold',
-        ]}
-        navText={[
-          '<',
-          '>',
-        ]}
+      <Swiper
+        modules={[Navigation]}
+        navigation
       >
-        { projects.map(({ id, title, img }) => <Slider id={id} title={title} img={img[1]} />) }
-      </OwlCarousel>
+        { templates.map(({ id, url, img }) => (
+          <SwiperSlide>
+            <div className="px-10 md:px-20 py-8 xl:py-20 max-w-5xl mx-auto" key={id}>
+              <a
+                href={url.demo}
+                target="blank"
+              >
+                <img
+                  className="object-cover"
+                  src={img}
+                  alt={`Template Example ${id}`}
+                />
+              </a>
+            </div>
+          </SwiperSlide>
+        )) }
+      </Swiper>
     </div>
   );
 }

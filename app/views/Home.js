@@ -16,7 +16,7 @@ export default function Home() {
       <section>
         <div className="bg-gradient-to-r from-main to-transparent">
           <h2 className="font-first tracking-[-.2em] text-4xl max-w-7xl mx-auto px-4">
-            Proyectos
+            Plantillas
           </h2>
         </div>
         <Carousel />

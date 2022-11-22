@@ -27,7 +27,6 @@ export default function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
       className="max-w-7xl mx-auto px-2 py-4"
-      id
     >
       <h3 className="text-white font-first tracking-[-0.2em] text-4xl">
         Envíame un correo para hablar conmigo

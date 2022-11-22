@@ -29,6 +29,7 @@
     "react-owl-carousel3": "2.2.5",
     "react-router": "6.4.3",
     "react-router-dom": "6.4.3",
+    "swiper": "^8.4.4",
     "three": "0.146.0",
     "yup": "0.32.11"
   },
