@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Phage Rough;
+  src: url('./assets/fonts/Phage_Rough.otf');
+}
+@font-face {
+  font-family: Ailerons;
+  src: url('./assets/fonts/Ailerons-Regular.otf');
+}
+@font-face {
+  font-family: Khand;
+  src: url('./assets/fonts/Khand_Medium.ttf');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  input, textarea {
+    @apply outline-none resize-none;
+  }
+  .input {
+    @apply p-2 w-full text-dark font-bold text-opacity-100 bg-light;
+  }
+}
+
+:root {
+  --swiper-theme-color: #faecef;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

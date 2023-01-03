@@ -7,23 +7,9 @@
         "plugin:react/recommended",
         "airbnb"
     ],
-    "settings": {
-        "react": {
-          "version": "detect"
-        }
-    },
     "overrides": [
-      {
-        "files": [
-          "*.jsx",
-          "*.js"
-        ]
-      }
     ],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
@@ -31,11 +17,11 @@
         "react"
     ],
     "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "linebreak-style": 0,
-      "no-console": 0,
-      "react/prop-types": 0,
-      "jsx-a11y/label-has-associated-control": 0,
-      "import/no-unresolved": 0
-    }
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "linebreak-style": 0,
+        "no-console": 0,
+        "react/prop-types": 0,
+        "jsx-a11y/label-has-associated-control": 0,
+        "import/no-unresolved": 0
+      }
 }
