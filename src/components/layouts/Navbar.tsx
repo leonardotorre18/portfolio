@@ -1,8 +1,25 @@
-import Button from "../buttons/Button"
+import { useEffect, useState } from "react";
+import Button from "../buttons/Button";
+
+
 
 export default function Navbar() {
+
+  const [showBackground, setShowBackground] = useState(false)
+  useEffect(()=> {
+    window.addEventListener('scroll', updateBackground);
+    return ()=> {
+      window.removeEventListener('scroll', updateBackground)
+    }
+  })
+  const updateBackground = () => {
+    if (document.body.getBoundingClientRect().top === 0) setShowBackground(false)
+    else setShowBackground(true)
+  }
+
+
   return (
-    <header className="py-4 sticky w-full top-2 z-50">
+    <header className={`py-4 transition-colors sticky w-full top-0 z-50 ${showBackground ? 'bg-LightModeWhite dark:bg-DarkModeDarkGrey' : ''}`}>
       <nav className="flex justify-between items-center mx-auto">
         <Button
           onClick={() => window.open('/assets/pdf/CV_Leonardo.pdf')}

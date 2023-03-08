@@ -17,9 +17,9 @@
     background-repeat: repeat-y;
   }
 }
-body.dark #background {
+/* body.dark #background {
   background: url('/assets/backgroundDark.svg');
   background-size: 100%;
   background-repeat: repeat-y;
-}
+} */
 
