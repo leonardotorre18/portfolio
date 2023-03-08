@@ -1,0 +1,44 @@
+.jumbotron {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.jumbotron__img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  padding: 2em;
+}
+.jumbotron__img img{
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+.jumbotron__img__figure {
+  width: 32em;
+  height: 28em;
+  position: absolute;
+  top: 58%; left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotateZ(-30deg) rotateX(40deg) rotateY(-10deg);
+  opacity: .8;
+  border-radius: 100%;
+  /* animation-name: example;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+}
+
+@keyframes example {
+  0% {
+    transform:translateX(-50%) translateY(-50%) rotateZ(-30deg);
+    /* transform: rotateZ(0deg) rotateX(0deg); */
+  }
+  100% {
+    /* transform:translateX(-50%) translateY(-50%) rotateZ(180deg); */
+    /* transform: rotateZ(90%) rotateX(90deg); */
+  }
+}

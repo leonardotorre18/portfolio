@@ -4,7 +4,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  // darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -15,12 +15,15 @@ module.exports = {
         'DarkModeGreen': '#3A8F7D',
 
         'LightModeWhite': '#EDEEF2',
-        'LightModeRed': '#EDEEF2',
+        'LightModeRed': '#BF0404',
         'LightModePrimaryBlue': '#215BA6',
         'LightModeSecondaryBlue': '#23A5D9',
         'LightModeTertiaryBlue': '#05DBF2'
       }
     },
+    fontFamily: {
+      sans: ['Ubuntu', 'sans-serif'],
+    }
   },
   plugins: [],
 }
