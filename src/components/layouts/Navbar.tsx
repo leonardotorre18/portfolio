@@ -20,14 +20,14 @@ export default function Navbar() {
 
   return (
     <header className={`py-4 transition-colors sticky w-full top-0 z-50 ${showBackground ? 'bg-LightModeWhite dark:bg-DarkModeDarkGrey' : ''}`}>
-      <nav className="flex justify-between items-center mx-auto">
+      <nav className="flex justify-between items-center mx-auto max-w-7xl">
         <Button
           onClick={() => window.open('/assets/pdf/CV_Leonardo.pdf')}
         >
           Download CV
         </Button>
         
-        <ul className="flex gap-4 text-lg">
+        <ul className="flex gap-6 text-lg font-medium">
           <li>Home</li>
           <li>Skills</li>
           <li>About Me</li>

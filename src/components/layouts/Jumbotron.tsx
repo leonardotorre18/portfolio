@@ -3,7 +3,7 @@ import '../../styles/Jumbotron.css'
 
 export default function Jumbotron() {
   return (
-    <div className='jumbotron mb-20'>
+    <div className='jumbotron mb-20 max-w-7xl mx-auto'>
       <div className='jumbotron__img'>
         <div className='jumbotron__img__figure dark:bg-DarkModeDarkGrey border-LightModeTertiaryBlue dark:border-DarkModeRed border-[.7rem] border-b-0' />
         <img src={img} alt="Animation Face" />
@@ -23,7 +23,7 @@ export default function Jumbotron() {
             <div>r</div>
           </span>
         </h1>
-        <p className='text-4xl leading-loose font-semibold'>Leonardo torrealba</p>
+        <p className='text-4xl leading-loose font-semibold'>Leonardo Torrealba</p>
       </div>
     </div>
   )

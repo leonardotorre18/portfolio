@@ -24,21 +24,19 @@
   transform: translateX(-50%) translateY(-50%) rotateZ(-30deg) rotateX(40deg) rotateY(-10deg);
   opacity: .8;
   border-radius: 100%;
-  /* animation-name: example;
+  /* animation-name: rotate;
   animation-duration: 4s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-direction: alternate; */
+  animation-iteration-count: infinite; */
 }
 
-@keyframes example {
+@keyframes rotate {
   0% {
-    transform:translateX(-50%) translateY(-50%) rotateZ(-30deg);
-    /* transform: rotateZ(0deg) rotateX(0deg); */
+    transform: translateX(-50%) translateY(-50%) rotateZ(-30deg) rotateX(40deg) rotateY(-10deg);
+  
   }
   100% {
-    /* transform:translateX(-50%) translateY(-50%) rotateZ(180deg); */
-    /* transform: rotateZ(90%) rotateX(90deg); */
+    transform: translateX(-50%) translateY(-50%) rotateZ(-390deg) rotateX(40deg) rotateY(-10deg);
   }
 }

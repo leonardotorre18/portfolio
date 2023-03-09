@@ -4,7 +4,7 @@ export default function Skills() {
   const lista: Array<number> = [0,1,2,3,4,5,6,7,8,9]
 
   return (
-    <div className='py-10'>
+    <div className='py-10 max-w-7xl mx-auto'>
       <h3 className='text-3xl font-semibold mb-6'>Skills</h3>
       <div className='grid grid-cols-7'>
         {

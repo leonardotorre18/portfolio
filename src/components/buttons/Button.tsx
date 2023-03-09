@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import React, { MouseEventHandler, useState } from 'react'
 
 export default function Button( 
   {
@@ -9,19 +9,30 @@ export default function Button(
     onClick?: MouseEventHandler
   }
 ) {
+
+  const [isHover, setIsHover] = useState(false)
+  const handlerMouseEnter = () => setIsHover(true)
+  const handlerMouseLeave = () => setIsHover(false)
+
   return (
     <button 
-      className='py-2 px-6 bg-LightModeTertiaryBlue dark:bg-DarkModeGreen relative rounded-lg overflow-hidden'
+      className='py-2 px-6 bg-LightModeTertiaryBlue dark:bg-DarkModeGreen relative rounded-lg overflow-hidden transition-all hover:ring-2 hover:ring-LightModeSecondaryBlue hover:dark:ring-DarkModeGreen'
       onClick={onClick}
-    >
+        onMouseEnter={handlerMouseEnter}
+        onMouseLeave={handlerMouseLeave}
+      >
       <div
-        className='absolute bg-LightModePrimaryBlue dark:bg-DarkModeGrey w-full h-[calc(100%-.2rem)] top-0 left-0'
+        className={`absolute bg-LightModePrimaryBlue hover:bg-LightModeWhite dark:bg-DarkModeGrey w-full h-[calc(100%-.2rem)] top-0 left-0 ${isHover ? 'h-full': ''} transition-all`}
         style={{
-          borderBottomLeftRadius: '4rem .8rem',
-          borderBottomRightRadius: '4rem .8rem'
+          borderBottomLeftRadius: isHover ? '' :'4rem .8rem',
+          borderBottomRightRadius: isHover ? '' :'4rem .8rem',
         }}
-      />
-      <span className='relative text-LightModeWhite dark:text-DarkModeWhite'>
+        />
+      <span className='relative text-DarkModeWhite pointer-events-none transition-colors'
+        style={{
+          color: isHover ? '#262626' : ''
+        }}
+      >
         {children}
       </span>
     </button>

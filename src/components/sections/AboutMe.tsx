@@ -4,7 +4,7 @@ import SocialMedia from '../pure/SocialMedia'
 
 export default function AboutMe() {
   return (
-    <div className='py-10'>
+    <div className='py-10 max-w-7xl mx-auto'>
       <h3 className=' text-3xl font-semibold mb-6'>About Me</h3>
 
     <div className='flex'>
@@ -21,9 +21,9 @@ export default function AboutMe() {
           <SocialMedia />
         </div>
       </div>
-      <div className='w-2/5'>
-        <div className='rounded-full overflow-hidden'>
-          <img src={img} alt="Foto perfil" />
+      <div className='w-2/5 flex justify-end'>
+        <div className='w-5/6'>
+          <img className='rounded-full ' src={img} alt="Foto perfil" />
         </div>
       </div>
     </div>
