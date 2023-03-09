@@ -1,26 +1,31 @@
-import React from 'react'
-import * as Yup from 'yup';
-
-const SubmitSchema = Yup.object().shape({
-  from_name: Yup.string()
-    .min(2, 'El nombre es muy corto')
-    .max(50, 'El nombre es muy largo')
-    .required('El nombre es Requerido'),
-  email: Yup.string()
-    .email('Email no válido')
-    .min(7, 'Email no válido')
-    .required('El email es necesario'),
-  message: Yup.string()
-    .min(10, 'El mensaje es muy corto')
-    .max(5000, 'El mensaje es muy largo')
-    .required('El mesaje es necesario'),
-});
+import FormEmail from "../forms/FormEmail"
+import {AiOutlineMail, AiOutlinePhone} from 'react-icons/ai';
+import { FiMapPin } from "react-icons/fi"
 
 export default function () {
   return (
-    <div>
+    <div className="py-10 max-w-7xl mx-auto">
       <h3 className=' text-3xl font-semibold mb-6'>Contact Me</h3>
-      <form action=""></form>
+      <div className='flex'>
+        <div className='w-1/2'>
+          <div>
+            <AiOutlineMail />
+            <p>Leonardotorre14@gmail.com</p>
+          </div>
+          <div>
+            <AiOutlinePhone />
+            <p>(+58)412 5077183</p>
+          </div>
+          <div>
+            <FiMapPin />
+            <p>Valencia, Venezuela estado Carabobo</p>
+          </div>
+
+        </div>
+        <div className='w-1/2'>
+          <FormEmail />
+        </div>
+      </div>
     </div>
   )
 }

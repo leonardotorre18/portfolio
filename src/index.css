@@ -1,25 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
+@layer components {
+  .input {
+    @apply text-DarkModeDarkGrey px-4 py-2 rounded-lg resize-none
+  }
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-} */
 *, *::before, *::after {
   font-family: 'Ubuntu', sans-serif;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+input, textarea, button {
+  outline: none;
 }
 
 :root {

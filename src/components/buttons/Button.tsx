@@ -3,10 +3,12 @@ import React, { MouseEventHandler, useState } from 'react'
 export default function Button( 
   {
     children,
-    onClick = ()=>{}
+    onClick = ()=>{},
+    options = {}
   }: {
     children?: React.ReactNode,
-    onClick?: MouseEventHandler
+    onClick?: MouseEventHandler,
+    options: object
   }
 ) {
 
@@ -16,6 +18,7 @@ export default function Button(
 
   return (
     <button 
+      {...options}
       className='py-2 px-6 bg-LightModeTertiaryBlue dark:bg-DarkModeGreen relative rounded-lg overflow-hidden transition-all hover:ring-2 hover:ring-LightModeSecondaryBlue hover:dark:ring-DarkModeGreen'
       onClick={onClick}
         onMouseEnter={handlerMouseEnter}
