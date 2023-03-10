@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "YNaara Designs",
+    "img": [
+      "/assets/img/rocksynaaradesigns.png",
+      "/assets/img/mockupynaaradesigns.png"
+    ],
+    "technologies": [
+      {
+        "key": 1,
+        "name": "React"
+      },
+      {
+        "key": 2,
+        "name": "Redux"
+      },
+      {
+        "key": 3,
+        "name": "TailwindCSS"
+      },
+      {
+        "key": 4,
+        "name": "Framer Motion"
+      }
+    ],
+    "description": "Tienda online creada para YNaara Designs. Esta aplicación funciona como carrito de compras para mantener la orden del usuario hasta que decida concretar la compra. Dado que YNaara tiene como preferencia atender a sus compradores por medio de WhatsApp Messenger, aplicación genera un mensaje personalizado al número designado por YNaara para concretar el pedido",
+    "links": {
+      "online": "https://ynaara-designs.netlify.app/",
+      "code": "https://github.com/leonardotorre18/ynaara_designs/tree/main"
+    }
+  }
+]
