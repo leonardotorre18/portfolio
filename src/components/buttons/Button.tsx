@@ -8,7 +8,7 @@ export default function Button(
   }: {
     children?: React.ReactNode,
     onClick?: MouseEventHandler,
-    options: object
+    options?: object
   }
 ) {
 

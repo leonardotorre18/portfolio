@@ -19,7 +19,7 @@ export default function Navbar() {
 
 
   return (
-    <header className={`py-4 transition-colors sticky w-full top-0 z-50 ${showBackground ? 'bg-LightModeWhite dark:bg-DarkModeDarkGrey' : ''}`}>
+    <header className={`py-4 transition-colors sticky w-full top-0 z-50 ${showBackground ? 'bg-LightModeWhite dark:bg-DarkModeDarkGrey shadow-xl' : ''}`}>
       <nav className="flex justify-between items-center mx-auto max-w-7xl">
         <Button
           onClick={() => window.open('/assets/pdf/CV_Leonardo.pdf')}

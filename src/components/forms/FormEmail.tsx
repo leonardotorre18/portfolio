@@ -32,12 +32,12 @@ export default function FormEmail() {
       }}
       onSubmit={(values, {resetForm})=>{ 
         resetForm()
-        emailjs.send(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          values,
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        )
+        // emailjs.send(
+        //   import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        //   import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        //   values,
+        //   import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        // )
       }}
     >
     {({ errors, touched }: {errors: any, touched: any}) => (
@@ -51,11 +51,13 @@ export default function FormEmail() {
           <Field
             name='from_name'
             className="input"
+            placeholder="¿What's Your Name?"
           />
           { errors.from_name && touched.from_name ? <ErrorMessage message={errors.from_name} /> : null }
           <Field
             name='email'
             className="input"
+            placeholder="Let me your Email"
           />
           { errors.email && touched.email ? <ErrorMessage message={errors.email} /> : null }
           <Field
@@ -63,14 +65,17 @@ export default function FormEmail() {
             rows='5'
             as='textarea'
             className="input"
+            placeholder="Tell me, how can I help you?"
           />
           { errors.message && touched.message ? <ErrorMessage message={errors.message} /> : null }
         </div>
-        <Button options={{
-          type: 'submit'
-        }}>
-          Send Email
-        </Button>
+        <div className='flex mt-6 justify-center'>
+          <Button options={{
+            type: 'submit'
+          }}>
+            Send Email
+          </Button>  
+        </div>
       </Form>
     )}
     </Formik>

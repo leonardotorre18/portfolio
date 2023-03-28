@@ -4,7 +4,7 @@ import { GoAlert } from 'react-icons/go';
 export default function ErrorMessage({ message }:{message:string | any}) {
   return (
     <div className="text-light">
-      <span className="flex items-center bg-main w-max py-1 px-2 gap-2">
+      <span className="flex items-center bg-main w-max px-2 gap-2">
         <GoAlert className="text-light" />
         {message}
       </span>
