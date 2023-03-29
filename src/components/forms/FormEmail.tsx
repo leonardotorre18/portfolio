@@ -4,24 +4,30 @@ import * as Yup from 'yup';
 import Button from '../buttons/Button';
 import ErrorMessage from '../pure/ErrorMessage';
 import emailjs from '@emailjs/browser';
-
-const SubmitSchema = Yup.object().shape({
-  from_name: Yup.string()
-    .min(2, 'El nombre es muy corto')
-    .max(50, 'El nombre es muy largo')
-    .required('El nombre es Requerido'),
-  email: Yup.string()
-    .email('Email no válido')
-    .min(7, 'Email no válido')
-    .required('El email es necesario'),
-  message: Yup.string()
-    .min(10, 'El mensaje es muy corto')
-    .max(5000, 'El mensaje es muy largo')
-    .required('El mesaje es necesario'),
-});
+import { FormattedMessage } from 'react-intl';
+import { LangContext } from '../Providers/LangProvider';
 
 
 export default function FormEmail() {
+
+  const context = React.useContext(LangContext);
+
+  const SubmitSchema = Yup.object().shape({
+    from_name: Yup.string()
+      .min(2, 'El nombre es muy corto')
+      .max(50, 'El nombre es muy largo')
+      .required('El nombre es requerido'),
+    email: Yup.string()
+      .email('Email no válido')
+      .min(7, 'Email no válido')
+      .required('El email es necesario'),
+    message: Yup.string()
+      .min(10, 'El mensaje es muy corto')
+      .max(5000, 'El mensaje es muy largo')
+      .required('El mesaje es necesario'),
+  });
+
+
   return (
     <Formik
       validationSchema={SubmitSchema}
@@ -73,7 +79,7 @@ export default function FormEmail() {
           <Button options={{
             type: 'submit'
           }}>
-            Send Email
+            <FormattedMessage id='Contact.Button.send' />
           </Button>  
         </div>
       </Form>

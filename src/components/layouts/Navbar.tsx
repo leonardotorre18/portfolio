@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import Button from "../buttons/Button";
-
-
 
 export default function Navbar() {
 
@@ -24,15 +23,14 @@ export default function Navbar() {
         <Button
           onClick={() => window.open('/assets/pdf/CV_Leonardo.pdf')}
         >
-          Download CV
+          <FormattedMessage id="Navbar.Button.download" />
         </Button>
-        
         <ul className="flex gap-6 text-lg font-medium">
-          <li>Home</li>
-          <li>Skills</li>
-          <li>About Me</li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li><FormattedMessage id="Navbar.List.home" /></li>
+          <li><FormattedMessage id="Navbar.List.skills" /></li>
+          <li><FormattedMessage id="Navbar.List.aboutme" /></li>
+          <li><FormattedMessage id="Navbar.List.projects" /></li>
+          <li><FormattedMessage id="Navbar.List.contact" /></li>
         </ul>
       </nav>
     </header>

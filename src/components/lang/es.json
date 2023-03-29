@@ -1,0 +1,25 @@
+{
+  "Navbar.List.home": "Inicio",
+  "Navbar.List.aboutme": "Sobre Mí",
+  "Navbar.List.contact": "Contacto",
+  "Navbar.List.projects": "Proyectos",
+  "Navbar.List.skills": "Habilidades",
+  "Navbar.Button.download": "Descargar CV",
+
+  "Section.Title.aboutme": "Sobre Mí",
+  "Section.Title.contact": "Contáctame",
+  "Section.Title.projects": "Proyectos",
+  "Section.Title.skills": "Habilidades",
+
+  "AboutMe.description": "Apasionado al desarrollo de aplicaciones web modernas. Un año de experiencia atendiendo a clientes de forma personal. Me gusta mantenerme siempre al día sobre las novedades más recientes de las tecnologías en las que me especializo.",
+  "AboutMe.year": "Año",
+  "AboutMe.experience": "Experiencia",
+
+  "Contact.Button.send": "Enviar Correo",
+  "Contact.description": "Envíame un mensaje",
+  "Contact.address": "Valencia, Venezuela estado Carabobo",
+
+  "ErrorMessage.FormEmail.Name.required": "El nombre es requerido",
+  "ErrorMessage.FormEmail.Name.short": "El nombre es demasiado corto",
+  "ErrorMessage.FormEmail.Name.long": "El nombre es demasiado largo"
+}

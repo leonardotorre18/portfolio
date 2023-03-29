@@ -1,21 +1,29 @@
 import img from '../../assets/perfil.jpg'
 import SocialMedia from '../pure/SocialMedia'
-
+import {FormattedMessage} from 'react-intl'
 
 export default function AboutMe() {
   return (
     <div className='py-10 max-w-7xl mx-auto'>
-      <h3 className=' text-3xl font-semibold mb-6'>About Me</h3>
+      <h3 className=' text-3xl font-semibold mb-6'>
+        <FormattedMessage id='Section.Title.aboutme' />
+      </h3>
 
     <div className='flex'>
       <div className='w-3/5'>
-        <p className='pb-7'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p className='pb-7'>
+          <FormattedMessage id='AboutMe.description' />
+        </p>
         <div className='flex justify-between w-full'>
           <div className='flex'>
             <p className='text-6xl w-min text-LightModePrimaryBlue dark:text-DarkModeGreen'>1</p>
             <div className='text-lg'>
-              <p>Year</p>
-              <p>Experience</p>
+              <p>
+                <FormattedMessage id='AboutMe.year' />
+              </p>
+              <p>
+                <FormattedMessage id='AboutMe.experience' />
+              </p>
             </div>
           </div>
           <SocialMedia />

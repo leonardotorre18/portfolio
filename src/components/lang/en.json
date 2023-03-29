@@ -1,0 +1,25 @@
+{
+  "Navbar.List.home": "Home",
+  "Navbar.List.aboutme": "About Me",
+  "Navbar.List.contact": "Contact",
+  "Navbar.List.projects": "Projects",
+  "Navbar.List.skills": "Skills",
+  "Navbar.Button.download": "Download CV",
+
+  "Section.Title.aboutme": "About Me",
+  "Section.Title.contact": "Contact Me",
+  "Section.Title.projects": "Projects",
+  "Section.Title.skills": "Skills",
+
+  "AboutMe.description": "Passionate about developing modern web applications. One year of experience serving clients personally. I like to always keep up to date on the latest developments in the technologies in which I specialize.",
+  "AboutMe.year": "Year",
+  "AboutMe.experience": "Experience",
+
+  "Contact.Button.send": "Send Email",
+  "Contact.description": "Send me an message",
+  "Contact.address": "Valencia, Venezuela Carabobo state",
+
+  "ErrorMessage.FormEmail.Name.required": "name is required",
+  "ErrorMessage.FormEmail.Name.short": "name is very short",
+  "ErrorMessage.FormEmail.Name.long": "name is too long"
+}

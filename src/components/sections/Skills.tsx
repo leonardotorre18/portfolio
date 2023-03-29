@@ -1,4 +1,5 @@
 import React from 'react'
+import {FormattedMessage} from 'react-intl';
 
 export default function Skills() {
   const lista: Array<string> = [
@@ -17,11 +18,13 @@ export default function Skills() {
 
   return (
     <div className='py-10 max-w-7xl mx-auto'>
-      <h3 className='text-3xl font-semibold mb-6'>Skills</h3>
+      <h3 className='text-3xl font-semibold mb-6'>
+        <FormattedMessage id='Section.Title.skills' />
+      </h3>
       <div className='grid grid-cols-7'>
         {
           lista.map(url => (
-            <div className='p-4'>
+            <div className='p-4' key={React.useId()}>
               <img src={url} alt="" />
             </div>
           ))

@@ -1,12 +1,17 @@
 import FormEmail from "../forms/FormEmail"
 import {AiOutlineMail, AiOutlinePhone} from 'react-icons/ai';
 import { FiMapPin } from "react-icons/fi"
+import {FormattedMessage} from 'react-intl'
 
 export default function () {
   return (
     <div className="py-10 max-w-7xl mx-auto">
-      <h3 className=' text-3xl font-semibold mb-3'>Contact Me</h3>
-      <p className="mb-6">Send me an message</p>
+      <h3 className=' text-3xl font-semibold mb-3'>
+        <FormattedMessage id="Section.Title.contact" />
+      </h3>
+      <p className="mb-6">
+        <FormattedMessage id="Contact.description" />  
+      </p>
       <div className='flex'>
         <div className='w-1/2 flex flex-col gap-6'>
           <div className="flex items-center gap-4">
@@ -19,7 +24,9 @@ export default function () {
           </div>
           <div className="flex items-center gap-4">
             <FiMapPin className="dark:text-DarkModeGreen text-LightModePrimaryBlue text-2xl" />
-            <p>Valencia, Venezuela estado Carabobo</p>
+            <p>
+              <FormattedMessage id="Contact.address" />
+            </p>
           </div>
 
         </div>
