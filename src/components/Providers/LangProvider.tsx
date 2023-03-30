@@ -1,9 +1,8 @@
 import React from 'react';
 import { IntlProvider } from "react-intl";
 import useLangHandler from '../hooks/useLangHandler';
-import messageEs from "../lang/en.json";
 
-export const LangContext = React.createContext({})
+export const LangContext = React.createContext<any>(null)
 
 export default function LangProvider(
   { children }:
@@ -13,10 +12,8 @@ export default function LangProvider(
   const [state, actions] = useLangHandler()
 
   return (
-    <LangContext.Provider value={state}>
+    <LangContext.Provider value={{state, actions}}>
       <IntlProvider locale={state.locale} messages={state.messages}>
-        <button onClick={actions.changeLangEs}>Español</button>
-        <button onClick={actions.changeLangEn}>Ingles</button>
         {children}
       </IntlProvider>
     </LangContext.Provider>

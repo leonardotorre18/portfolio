@@ -8,6 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // 'DarkModeRed': '#240046',
+        // 'DarkModeWhite': '#F2F2F2',
+        // 'DarkModeDarkGrey': '#240046',
+        // 'DarkModeGrey': '#3c096c',
+        // 'DarkModeDarkGrey-50': '#240046',
+        // 'DarkModeGreen': '#ff9100',
         'DarkModeRed': '#C11428',
         'DarkModeWhite': '#F2F2F2',
         'DarkModeGrey': '#595959',
