@@ -1,3 +1,4 @@
+import Footer from "./components/layouts/Footer"
 import Jumbotron from "./components/layouts/Jumbotron"
 import Navbar from "./components/layouts/Navbar"
 import Background from "./components/pure/Background"
@@ -17,6 +18,7 @@ function App() {
       <AboutMe />
       <Skills />
       <Contact />
+      <Footer />
     </div>
   )
 }

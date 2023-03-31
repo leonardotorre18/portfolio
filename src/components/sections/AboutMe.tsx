@@ -4,11 +4,10 @@ import {FormattedMessage} from 'react-intl'
 
 export default function AboutMe() {
   return (
-    <div className='py-10 max-w-7xl mx-auto'>
+    <div className='pb-10 pt-20 max-w-7xl mx-auto' id='aboutme'>
       <h3 className=' text-3xl font-semibold mb-6'>
         <FormattedMessage id='Section.Title.aboutme' />
       </h3>
-
     <div className='flex'>
       <div className='w-3/5'>
         <p className='pb-7'>

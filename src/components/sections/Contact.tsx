@@ -5,7 +5,7 @@ import {FormattedMessage} from 'react-intl'
 
 export default function () {
   return (
-    <div className="py-10 max-w-7xl mx-auto">
+    <div className="pb-10 pt-20 max-w-7xl mx-auto" id="contact">
       <h3 className=' text-3xl font-semibold mb-3'>
         <FormattedMessage id="Section.Title.contact" />
       </h3>

@@ -8,6 +8,10 @@
   }
 }
 
+*,html,body {
+  scroll-behavior: smooth;
+}
+
 *, *::before, *::after {
   font-family: 'Ubuntu', sans-serif;
 }

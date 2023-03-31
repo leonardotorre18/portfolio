@@ -3,7 +3,7 @@ import '../../styles/Jumbotron.css'
 
 export default function Jumbotron() {
   return (
-    <div className='jumbotron mb-20 max-w-7xl mx-auto'>
+    <div className='jumbotron pt-10 mb-20 max-w-7xl mx-auto'>
       <div className='jumbotron__img'>
         <div className='jumbotron__img__figure dark:bg-DarkModeDarkGrey border-LightModeTertiaryBlue dark:border-DarkModeGrey border-[.7rem] border-b-0' />
         <img src={img} alt="Animation Face" />
