@@ -12,8 +12,8 @@ export default function () {
       <p className="mb-6">
         <FormattedMessage id="Contact.description" />  
       </p>
-      <div className='flex'>
-        <div className='w-1/2 flex flex-col gap-6'>
+      <div className='flex flex-wrap'>
+        <div className='w-full md:w-1/2 flex flex-col gap-6'>
           <div className="flex items-center gap-4">
             <AiOutlineMail className="dark:text-DarkModeGreen text-LightModePrimaryBlue text-2xl" />
             <p>Leonardotorre14@gmail.com</p>
@@ -30,7 +30,7 @@ export default function () {
           </div>
 
         </div>
-        <div className='w-1/2'>
+        <div className='w-full md:w-1/2 mt-16 md:mt-auto'>
           <FormEmail />
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function Skills() {
       <h3 className='text-3xl font-semibold mb-6'>
         <FormattedMessage id='Section.Title.skills' />
       </h3>
-      <div className='grid grid-cols-7'>
+      <div className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7'>
         {
           lista.map(url => (
             <div className='p-4' key={React.useId()}>

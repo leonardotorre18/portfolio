@@ -8,12 +8,12 @@ export default function AboutMe() {
       <h3 className=' text-3xl font-semibold mb-6'>
         <FormattedMessage id='Section.Title.aboutme' />
       </h3>
-    <div className='flex'>
-      <div className='w-3/5'>
+    <div className='flex flex-wrap'>
+      <div className='w-full sm:w-3/4'>
         <p className='pb-7'>
           <FormattedMessage id='AboutMe.description' />
         </p>
-        <div className='flex justify-between w-full'>
+        <div className='flex justify-evenly items-center w-full'>
           <div className='flex'>
             <p className='text-6xl w-min text-LightModePrimaryBlue dark:text-DarkModeGreen'>1</p>
             <div className='text-lg'>
@@ -28,8 +28,9 @@ export default function AboutMe() {
           <SocialMedia />
         </div>
       </div>
-      <div className='w-2/5 flex justify-end'>
-        <div className='w-5/6'>
+
+      <div className='w-full sm:w-1/4 flex'>
+        <div className='w-full'>
           <img className='rounded-full ' src={img} alt="Foto perfil" />
         </div>
       </div>

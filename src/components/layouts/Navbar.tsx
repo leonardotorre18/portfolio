@@ -51,7 +51,7 @@ export default function Navbar() {
           <a href="#aboutme" onClick={hideShowMenu}><FormattedMessage id="Navbar.List.aboutme" /></a>
           <a href="#skills" onClick={hideShowMenu}><FormattedMessage id="Navbar.List.skills" /></a>
           <a href="#contact" onClick={hideShowMenu}><FormattedMessage id="Navbar.List.contact" /></a>
-          {/* <ButtonLang /> */}
+          <ButtonLang />
         </ul>
       </nav>
     </header>

@@ -2,13 +2,13 @@ import { BsTwitter, BsFacebook, BsGithub, BsLinkedin, BsWhatsapp, BsInstagram } 
 
 export default function SocialMedia() {
   return (
-    <div className='flex text-LightModePrimaryBlue dark:text-DarkModeGreen w-full justify-center'>
-      <BsTwitter className='h-full w-16 p-4' />
-      <BsFacebook className='h-full w-16 p-4' />
-      <BsGithub className='h-full w-16 p-4' />
-      <BsLinkedin className='h-full w-16 p-4' />
-      <BsWhatsapp className='h-full w-16 p-4' />
-      <BsInstagram className='h-full w-16 p-4' />
+    <div className='flex gap-4 text-LightModePrimaryBlue dark:text-DarkModeGreen justify-center px-4'>
+      <BsTwitter className=' text-2xl' />
+      <BsFacebook className=' text-2xl' />
+      <BsGithub className=' text-2xl' />
+      <BsLinkedin className=' text-2xl' />
+      <BsWhatsapp className=' text-2xl' />
+      <BsInstagram className=' text-2xl' />
     </div>
   )
 }
