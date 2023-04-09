@@ -5,12 +5,17 @@ import Button from '../buttons/Button';
 import ErrorMessage from '../pure/ErrorMessage';
 import emailjs from '@emailjs/browser';
 import { FormattedMessage } from 'react-intl';
-import { LangContext } from '../Providers/LangProvider';
+import useValidateLang from '../hooks/useValidateLang';
+import PlaceHoldersES from '../lang/es-PlaceholderContact.json';
+import PlaceHoldersEN from '../lang/en-PlaceholderContact.json';
 
 
 export default function FormEmail() {
 
-  const context = React.useContext(LangContext);
+  const Lang = useValidateLang({
+    es: PlaceHoldersES,
+    en: PlaceHoldersEN
+  });
 
   const SubmitSchema = Yup.object().shape({
     from_name: Yup.string()
@@ -57,13 +62,13 @@ export default function FormEmail() {
           <Field
             name='from_name'
             className="input"
-            placeholder="¿What's Your Name?"
+            placeholder={Lang.from_name}
           />
           { errors.from_name && touched.from_name ? <ErrorMessage message={errors.from_name} /> : null }
           <Field
             name='email'
             className="input"
-            placeholder="Let me your Email"
+            placeholder={Lang.email}
           />
           { errors.email && touched.email ? <ErrorMessage message={errors.email} /> : null }
           <Field
@@ -71,7 +76,7 @@ export default function FormEmail() {
             rows='5'
             as='textarea'
             className="input"
-            placeholder="Tell me, how can I help you?"
+            placeholder={Lang.message}
           />
           { errors.message && touched.message ? <ErrorMessage message={errors.message} /> : null }
         </div>
