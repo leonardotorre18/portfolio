@@ -1,0 +1,25 @@
+{
+  "Navbar.List.home": "Inicio",
+  "Navbar.List.aboutme": "Sobre Mí",
+  "Navbar.List.contact": "Contacto",
+  "Navbar.List.projects": "Proyectos",
+  "Navbar.List.skills": "Habilidades",
+  "Navbar.Button.download": "Descargar CV",
+
+  "Section.Title.aboutme": "Sobre Mí",
+  "Section.Title.contact": "Contáctame",
+  "Section.Title.projects": "Proyectos",
+  "Section.Title.skills": "Habilidades",
+  "AboutMe.description_1": "Soy Leonardo, programador apasionado al desarrollo de aplicaciones Web Modernas. Actualmente tengo un año de experiencia atendiendo a clientes de forma personal. Domino las principales herramientas y lenguajes  de desarrollo más vanguardista. Soy FullStack, capacitado para el desarrollo de servidores web e interfaces gráficas para navegadores. Me especializo en el uso de JavaScript, el principal lenguaje de programación para la web, y sus principales herramientas como React, NodeJS y Express. Manejo de Bases de datos NoSql usando MongoDB.",
+  "AboutMe.description_2": "Actual estudiante de la carrera de Ingeniería de Sistemas en la universidad nacional de mi país. Estudio con la finalidad de impular mi carrera como profesional y reforzar mis habilidades tecnicas y blandas.",
+  "AboutMe.year": "Año",
+  "AboutMe.experience": "Experiencia",
+
+  "Contact.Button.send": "Enviar Correo",
+  "Contact.description": "Envíame un mensaje",
+  "Contact.address": "Valencia, Venezuela estado Carabobo",
+
+  "ErrorMessage.FormEmail.Name.required": "El nombre es requerido",
+  "ErrorMessage.FormEmail.Name.short": "El nombre es demasiado corto",
+  "ErrorMessage.FormEmail.Name.long": "El nombre es demasiado largo"
+}

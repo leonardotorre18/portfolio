@@ -1,0 +1,26 @@
+{
+  "Navbar.List.home": "Home",
+  "Navbar.List.aboutme": "About Me",
+  "Navbar.List.contact": "Contact",
+  "Navbar.List.projects": "Projects",
+  "Navbar.List.skills": "Skills",
+  "Navbar.Button.download": "Download CV",
+
+  "Section.Title.aboutme": "About Me",
+  "Section.Title.contact": "Contact Me",
+  "Section.Title.projects": "Projects",
+  "Section.Title.skills": "Skills",
+
+  "AboutMe.description_1": "I'm Leonardo, a programmer passionate about the development of Modern Web applications. I currently have a year of experience serving clients personally. I master the main tools and most cutting-edge development languages. I am FullStack, qualified for the development of web servers and graphical interfaces for browsers. I specialize in the use of JavaScript, the main programming language for the web, and its main tools such as React, NodeJS and Express. Handling NoSql Databases using MongoDBs.",
+  "AboutMe.description_2": "Current student of the Systems Engineering career at the national university of my country. I study in order to boost my career as a professional and reinforce my technical and soft skills.",
+  "AboutMe.year": "Year",
+  "AboutMe.experience": "Experience",
+
+  "Contact.Button.send": "Send Email",
+  "Contact.description": "Send me an message",
+  "Contact.address": "Valencia, Venezuela Carabobo state",
+
+  "ErrorMessage.FormEmail.Name.required": "name is required",
+  "ErrorMessage.FormEmail.Name.short": "name is very short",
+  "ErrorMessage.FormEmail.Name.long": "name is too long"
+}

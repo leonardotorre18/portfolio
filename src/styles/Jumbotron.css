@@ -1,0 +1,54 @@
+.jumbotron {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.jumbotron__img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  padding: 2em;
+  
+}
+@media (max-width: 640px) {
+  .jumbotron__img {
+    height: 380px;
+  }
+}
+.jumbotron__img img{
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+.jumbotron__img__figure {
+  width: 30em;
+  height: 30em;
+  position: absolute;
+  top: 58%; left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotateZ(-30deg) rotateX(40deg) rotateY(-10deg);
+  opacity: .8;
+  border-radius: 100%;
+  /* animation-name: rotate;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite; */
+}
+@media (max-width: 640px) {
+  .jumbotron__img__figure {
+    width: 95vw;
+    height: 100vw;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateZ(-30deg) rotateX(40deg) rotateY(-10deg);
+  
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateZ(-390deg) rotateX(40deg) rotateY(-10deg);
+  }
+}
