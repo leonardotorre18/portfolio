@@ -11,7 +11,10 @@ export default function AboutMe() {
     <div className='flex flex-wrap'>
       <div className='w-full sm:w-3/4'>
         <p className='pb-7'>
-          <FormattedMessage id='AboutMe.description' />
+          <FormattedMessage id='AboutMe.description_1' />
+        </p>
+        <p className="pb-7">
+          <FormattedMessage id='AboutMe.description_2' />
         </p>
         <div className='flex justify-evenly items-center w-full'>
           <div className='flex'>

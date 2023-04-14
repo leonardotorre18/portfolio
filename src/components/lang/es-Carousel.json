@@ -2,10 +2,15 @@
   {
     "id": 1,
     "title": "Tienda de YNaara",
-    "description": "Loremmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmm"
-  },  {
+    "description": "Tienda online creada para YNaara Designs. Esta aplicación funciona como carrito de compras para mantener la orden del usuario hasta que decida concretar la compra. Dado que YNaara tiene como preferencia atender a sus compradores por medio de WhatsApp Messenger, aplicación genera un mensaje personalizado al número designado por YNaara para concretar el pedido.",
+    "front": "/assets/img/ynaaradesignslogo.jpg",
+    "url": {
+      "demo": "https://ynaara-designs.netlify.app",
+      "code": "https://github.com/leonardotorre18/ynaara_designs/tree/main"
+    }
+  }, {
     "id": 2,
-    "title": "Tienda de YNaara",
-    "description": "Loremmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmm"
+    "title": "Tienda Antojitos Frit",
+    "description": "Antijitos Frit es una página web Ecommerce. El objetivo de esta aplicación era automatizar las ventas online de una tienda de pasapalos. La aplicación incluye una pasarela de pagos y control de inventario, dichos datos se reflejan en la aplicación."
   }
 ]

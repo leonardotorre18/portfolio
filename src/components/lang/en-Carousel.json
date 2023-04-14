@@ -2,10 +2,15 @@
   {
     "id": 1,
     "title": "YNaara Store",
-    "description": "Loremmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmm"
-  },  {
+    "description": "Online store created for YNaara Designs. This application works as a shopping cart to keep the user's order until they decide to complete the purchase. Since YNaara prefers to serve its buyers through WhatsApp Messenger, the application generates a personalized message to the number designated by YNaara to complete the order.",
+    "front": "/assets/img/ynaaradesignslogo.jpg",
+    "url": {
+      "demo": "https://ynaara-designs.netlify.app",
+      "code": "https://github.com/leonardotorre18/ynaara_designs/tree/main"
+    }
+  },{
     "id": 2,
-    "title": "YNaara Store",
-    "description": "Loremmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmm"
+    "title": "Antojitos Frit Store",
+    "description": "Antijitos Frit is an Ecommerce website. The objective of this application was to automate the online sales of a snack shop. The application includes a payment gateway and inventory control, these data are reflected in the application."
   }
 ]

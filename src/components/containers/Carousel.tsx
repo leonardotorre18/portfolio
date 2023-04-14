@@ -22,13 +22,17 @@ export default function Carousel() {
       modules={[Navigation]}
       navigation
     >
-      { lang.map((data: any) => (
+      {/* { lang.map((data: any) => (
 
       <SwiperSlide key={data.id}>
         <CardProjects data={data} />
       </SwiperSlide>
 
-      )) }
+      )) } */}
+
+      <SwiperSlide key={lang[0].id}>
+        <CardProjects data={lang[0]} />
+      </SwiperSlide>
 
     </Swiper>
   )
