@@ -1,44 +1,35 @@
 {
   "name": "portfolio",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "Personal Web Site",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "vitest",
+    "lint": "eslint src/*",
     "preview": "vite preview",
-    "host": "vite --host 3000"
+    "dev:host": "vite --host"
   },
+  "author": "Leonardotorre18",
+  "license": "ISC",
   "dependencies": {
-    "@emailjs/browser": "^3.10.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/react-hooks": "^8.0.1",
-    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-    "react-intl": "^6.3.2",
-    "swiper": "^9.1.0",
-    "vitest": "^0.29.2",
-    "yup": "^1.0.2"
+    "sass": "^1.69.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
     "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.38.0",
-    "eslint-config-standard-with-typescript": "^34.0.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.7.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.32.2",
-    "jsdom": "^21.1.0",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7",
+    "eslint-plugin-react": "^7.33.2",
     "typescript": "^4.9.5",
     "vite": "^4.1.0"
   }
