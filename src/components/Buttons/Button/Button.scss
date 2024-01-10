@@ -1,12 +1,16 @@
 @use '../../../styles/variables' as vars;
 
 .button {
-  padding: 15px 30px;
+  padding: 8pt 16pt;
   border-radius: 10px;
   font-weight: 800;
-  background-color: vars.$color-action;
+  background-color: vars.$color-light;
   color: vars.$color-dark;
+  transition: background .3s ease-in;
+  transition: border .3s ease-in;
+  cursor: pointer;
   &:hover {
-    background-color: vars.$color-light;
+    background-color: transparent;
+    border-color: vars.$color-light;
   }
 }

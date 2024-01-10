@@ -1,0 +1,17 @@
+.jumbotron {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  &__img {
+    width: 50%;
+    max-width: 300px;
+  }
+  &__content {
+    width: 50%;
+    p {
+      margin-top: 4pt;
+      margin-bottom: 16pt;
+    }
+  }
+}
