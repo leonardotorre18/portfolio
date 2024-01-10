@@ -1,3 +1,5 @@
+@use './styles/variables.scss' as vars;
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -8,6 +10,10 @@
   text-decoration: none;
   border: none;
   list-style: none;
+}
+
+body {
+  background-color: vars.$color-white;
 }
 
 h1, h2, h3, h4, h5, h6,
