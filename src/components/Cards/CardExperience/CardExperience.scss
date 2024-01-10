@@ -1,0 +1,15 @@
+.card-experience {
+  font-size: 12pt;
+  padding: 8pt;
+  &__date {
+    opacity: .5;
+    display: block;
+    margin-top: 4pt;
+    margin-bottom: 8pt;
+  }
+  &__container {
+    p {
+      margin: 4pt 0;
+    }
+  }
+}
