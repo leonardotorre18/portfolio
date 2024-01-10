@@ -1,0 +1,12 @@
+@use '../../../styles/variables' as vars;
+
+.button {
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 800;
+  background-color: vars.$color-action;
+  color: vars.$color-dark;
+  &:hover {
+    background-color: vars.$color-light;
+  }
+}

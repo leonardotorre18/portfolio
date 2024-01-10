@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { type ReactElement } from 'react'
+import NavList from '../Lists/NavList/NavList'
+import Button from '../Buttons/Button/Button'
+import Logo from '../Logo/Logo'
+import './Navbar.scss'
 
-export default function Navbar() {
+export default function Navbar (): ReactElement {
   return (
-    <div>Navbar</div>
+    <header className='header'>
+      <nav className='header__navbar'>
+        <Logo />
+        <div className='header__navbar__container'>
+          <NavList />
+          <Button>Descargar CV</Button>
+        </div>
+      </nav>
+    </header>
   )
 }

@@ -1,0 +1,13 @@
+.header {
+  padding: 16pt 24pt;
+  &__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__container {
+      display: flex;
+      align-items: center;
+      gap: 16pt;
+    }
+  }
+}
