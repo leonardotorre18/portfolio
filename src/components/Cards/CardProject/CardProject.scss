@@ -23,4 +23,11 @@
     transform: translateX(-1pt) translateY(-1pt);
     box-shadow: vars.$shadow-regular;
   }
+
+  @media (max-width: vars.$screen-size-small) {
+    flex-direction: column;
+    &__img {
+      width: 100%;
+    }
+  }
 }

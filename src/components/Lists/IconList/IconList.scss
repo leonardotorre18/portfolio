@@ -4,6 +4,7 @@
   display: flex;
   gap: 8pt;
   padding: 4pt 0;
+  flex-wrap: wrap;
   svg {
     font-size: 12pt;
     color: vars.$color-secondary;

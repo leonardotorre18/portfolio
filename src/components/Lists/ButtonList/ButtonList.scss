@@ -1,5 +1,14 @@
+@use '../../../styles/variables.scss' as vars;
+
 .button-list {
   display: flex;
   gap: 24pt;
   padding: 16pt 0;
+
+  @media (max-width: vars.$screen-size-small) {
+    // flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
 }
