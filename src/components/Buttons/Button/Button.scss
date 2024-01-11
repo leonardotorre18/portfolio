@@ -2,7 +2,7 @@
 
 .button {
   padding: 8pt 16pt;
-  border-radius: 10px;
+  border-radius: vars.$border-radius;
   font-weight: 800;
   background-color: vars.$color-light;
   color: vars.$color-dark;

@@ -3,7 +3,7 @@
 .card-project {
   display: flex;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: vars.$border-radius;
   &__img {
     width: 30%;
     overflow: hidden;

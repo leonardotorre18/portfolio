@@ -2,7 +2,7 @@
 
 .button-icon {
   // padding: 8pt 16pt;
-  border-radius: 10px;
+  border-radius: vars.$border-radius;
   background-color: transparent;
   transition: background .3s ease-in, border .3s ease-in;
   display: flex;

@@ -2,7 +2,7 @@
 
 .button-stroke {
   padding: 8pt 32pt;
-  border-radius: 10px;
+  border-radius: vars.$border-radius;
   font-size: vars.$font-size-regular;
   border-color: vars.$color-dark;
   transition: border .3s ease-in;
