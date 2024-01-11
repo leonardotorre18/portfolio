@@ -31,21 +31,25 @@ export default function CardProject ({
         <IconList>
           {icons}
         </IconList>
+        <div className="card-project__container__body">
           {children}
-        <ButtonList>
-          <ButtonIcon
-            icon={<FiCopy />}
-            onClick={navigateToCode}
-          >
-            Ver código
-          </ButtonIcon>
-          <ButtonIcon
-            icon={<FiLink />}
-            onClick={navigateToDemo}
-          >
-            Ver demo
-          </ButtonIcon>
-        </ButtonList>
+        </div>
+        <div className="card-project__container__list">
+          <ButtonList>
+            <ButtonIcon
+              icon={<FiCopy />}
+              onClick={navigateToCode}
+            >
+              Ver código
+            </ButtonIcon>
+            <ButtonIcon
+              icon={<FiLink />}
+              onClick={navigateToDemo}
+            >
+              Ver demo
+            </ButtonIcon>
+          </ButtonList>
+        </div>
       </div>
     </div>
   )
