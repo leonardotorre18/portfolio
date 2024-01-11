@@ -17,5 +17,8 @@
         "react"
     ],
     "rules": {
-    }
+    },
+    "ignorePatterns": [
+      "vite.config.ts"
+    ]
 }

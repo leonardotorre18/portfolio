@@ -1,4 +1,4 @@
-import React, { type ReactElement, type ReactNode } from 'react'
+import React, { type ReactElement } from 'react'
 import './H1.scss'
 
 export default function H1 ({
@@ -10,5 +10,5 @@ export default function H1 ({
 }
 
 interface PropTypes {
-  children: ReactNode
+  children: string
 }

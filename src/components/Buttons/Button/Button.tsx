@@ -1,4 +1,4 @@
-import React, { type ReactNode, type ReactElement } from 'react'
+import React, { type ReactElement } from 'react'
 
 import './Button.scss'
 
@@ -12,6 +12,6 @@ export default function Button ({
 }
 
 interface PropTypes {
-  children: ReactNode
+  children: string
   onClick?: () => void
 }
