@@ -19,6 +19,7 @@
     font-size: 16pt;
   }
   &:hover svg, &:hover &__text {
+    stroke: vars.$color-secondary;
     color: vars.$color-secondary;
   }
 }

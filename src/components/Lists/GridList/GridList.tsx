@@ -1,5 +1,5 @@
 import React, { type ReactNode, type ReactElement } from 'react'
-import './GridContainer.scss'
+import './GridList.scss'
 
 export default function GridContainer ({
   children

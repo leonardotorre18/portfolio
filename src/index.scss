@@ -10,6 +10,7 @@
   text-decoration: none;
   border: none;
   list-style: none;
+  color: vars.$color-dark;
 }
 
 body {
@@ -18,8 +19,8 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 p, span, button,
-input, textarea {
-  font-size: 12pt;
+input, textarea, li, a {
+  font-size: vars.$font-size-regular;
   font-weight: 400;
 }
 

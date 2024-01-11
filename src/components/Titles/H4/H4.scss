@@ -1,4 +1,6 @@
+@use '../../../styles/variables.scss' as vars;
+
 .h4 {
-  font-size: 16pt;
+  font-size: vars.$font-size-large;
   font-weight: bold;
 }

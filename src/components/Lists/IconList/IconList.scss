@@ -1,0 +1,11 @@
+@use '../../../styles/variables.scss' as vars;
+
+.icon-list {
+  display: flex;
+  gap: 8pt;
+  padding: 4pt 0;
+  svg {
+    font-size: 12pt;
+    color: vars.$color-secondary;
+  }
+}

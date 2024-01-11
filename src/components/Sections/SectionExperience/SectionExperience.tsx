@@ -1,14 +1,14 @@
 import React, { type ReactElement } from 'react'
 import Section from '../Section/Section'
 import CardExperience from '../../Cards/CardExperience/CardExperience'
-import GridContainer from '../../GridContainer/GridContainer'
+import GridList from '../../Lists/GridList/GridList'
 import Param from '../../Param/Param'
 
 export default function SectionExperience (): ReactElement {
   return (
     <Section title='Experiencia'>
 
-      <GridContainer>
+      <GridList>
         <CardExperience title='Freelancer' date='2020 enero - 2022 diciembre' >
           <Param>Creación y diseño de LandingPages para distintos clientes (HTML, CSS, JS, TailwindCSS), tiendas en línea, entre otros.</Param>
           <Param>Diseño web responsivo para multiples dispositivos</Param>
@@ -28,7 +28,7 @@ export default function SectionExperience (): ReactElement {
           <Param>Organización de repositorios y supervisión de historial de commits</Param>
           <Param>Diseños web usando Figma</Param>
         </CardExperience>
-      </GridContainer>
+      </GridList>
     </Section>
   )
 }

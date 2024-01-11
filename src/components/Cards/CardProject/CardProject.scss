@@ -1,0 +1,11 @@
+.card-project {
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  &__img {
+    width: 40%;
+  }
+  &__container {
+    padding: 16pt 24pt;
+  }
+}

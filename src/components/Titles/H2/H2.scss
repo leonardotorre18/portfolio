@@ -1,4 +1,6 @@
+@use '../../../styles/variables.scss' as vars;
+
 .h2 {
-  font-size: 24pt;
+  font-size: vars.$font-size-extralarge;
   font-weight: bold;
 }

@@ -5,7 +5,7 @@ export default function Param ({
   children
 }: PropTypes): ReactElement {
   return (
-    <p>{children}</p>
+    <p className='p'>{children}</p>
   )
 }
 

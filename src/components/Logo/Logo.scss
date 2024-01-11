@@ -1,5 +1,6 @@
+@use '../../styles/variables.scss' as vars;
 .logo {
   display: block;
-  font-size: 16pt;
+  font-size: vars.$font-size-large;
   font-weight: bold;
 }

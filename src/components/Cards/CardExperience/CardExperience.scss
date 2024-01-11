@@ -1,14 +1,23 @@
 .card-experience {
   font-size: 12pt;
   padding: 8pt 24pt;
+  & > .h1, 
+  & > .h2, 
+  & > .h3, 
+  & > .h4, 
+  & > .h5, 
+  & > .h6  {
+    text-align: center;
+  }
   &__date {
+    text-align: center;
     opacity: .5;
     display: block;
     margin-top: 4pt;
     margin-bottom: 8pt;
   }
   &__container {
-    p {
+    & > .p {
       margin: 4pt 0;
     }
   }
