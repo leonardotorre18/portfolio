@@ -5,11 +5,13 @@ import SectionExperience from './components/Sections/SectionExperience/SectionEx
 import Jumbotron from './components/Sections/Jumbotron/Jumbotron'
 import Main from './components/Main/Main'
 import SectionProject from './components/Sections/SectionProject/SectionProject'
+import Footer from './components/Footer/Footer'
 
 function App (): ReactElement {
   return (
     <>
       <Navbar />
+
       <Main>
         <Jumbotron />
 
@@ -19,6 +21,8 @@ function App (): ReactElement {
 
         <SectionProject />
       </Main>
+
+      <Footer />
     </>
   )
 }

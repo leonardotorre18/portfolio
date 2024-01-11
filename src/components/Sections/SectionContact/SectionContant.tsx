@@ -12,8 +12,22 @@ export default function SectionContant (): ReactElement {
 
       <ButtonList>
         <Param>Leonardotorre14@gmail.com</Param>
-        <ButtonIcon icon={<FiMail />} >Enviar Correo</ButtonIcon>
-        <ButtonIcon icon={<FiCopy />} >Enviar Correo</ButtonIcon>
+        <ButtonIcon
+          icon={<FiMail />}
+          onClick={() => window.open('mailto:Leonardotorre14@gmail.com')}
+        >
+          Enviar Correo
+        </ButtonIcon>
+        <ButtonIcon
+          icon={<FiCopy />}
+          onClick={() => {
+            navigator.clipboard.writeText('Leonardotorre14@gmail.com')
+              .then(() => {})
+              .catch(() => {})
+          }}
+        >
+          Copiar Correo
+        </ButtonIcon>
       </ButtonList>
     </Section>
   )

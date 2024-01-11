@@ -4,10 +4,11 @@ import './Section.scss'
 
 export default function Section ({
   title,
-  children
+  children,
+  id
 }: PropTypes): ReactElement {
   return (
-    <section className='section'>
+    <section className='section' id={id ?? id}>
       <H2>{title}</H2>
       <div className='section__container'>
 
@@ -20,5 +21,6 @@ export default function Section ({
 
 interface PropTypes {
   title: string
+  id?: string
   children: ReactNode
 }

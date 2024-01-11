@@ -1,5 +1,6 @@
 import React, { type ReactElement } from 'react'
 import Param from '../Param/Param'
+import './Footer.scss'
 
 export default function Footer (): ReactElement {
   return (

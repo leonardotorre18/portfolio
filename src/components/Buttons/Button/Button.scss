@@ -6,8 +6,7 @@
   font-weight: 800;
   background-color: vars.$color-light;
   color: vars.$color-dark;
-  transition: background .3s ease-in;
-  transition: border .3s ease-in;
+  transition: border .3s ease-in, background .3s ease-in;
   cursor: pointer;
   &:hover {
     background-color: transparent;

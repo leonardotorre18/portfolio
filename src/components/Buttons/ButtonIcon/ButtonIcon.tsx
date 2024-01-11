@@ -3,10 +3,11 @@ import './ButtonIcon.scss'
 
 export default function ButtonIcon ({
   children,
-  icon
+  icon,
+  onClick
 }: PropTypes): ReactElement {
   return (
-    <button className='button-icon'>
+    <button className='button-icon' onClick={onClick ?? onClick}>
       {icon}
       <span className='button-icon__text'>
         {children}
@@ -18,4 +19,5 @@ export default function ButtonIcon ({
 interface PropTypes {
   children: ReactNode
   icon: ReactElement
+  onClick?: () => void
 }

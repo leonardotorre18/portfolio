@@ -8,4 +8,17 @@
   &__container {
     padding: 16pt 24pt;
   }
+
+
+  & ,&__img img {
+    transition: transform .3s ease-in, box-shadow .3s ease-in;
+  }
+  &:hover &__img img {
+    transform: scale(1.1);
+  }
+
+  &:hover {
+    transform: translateX(-1pt) translateY(-1pt);
+    box-shadow: 5px 5px 5px 0px #2e2e2e21;
+  }
 }

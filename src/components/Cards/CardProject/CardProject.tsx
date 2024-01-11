@@ -11,8 +11,16 @@ export default function CardProject ({
   img,
   title,
   icons,
-  children
+  children,
+  urlCode,
+  urlDemo
 }: PropTypes): ReactElement {
+  const navigateToDemo = (): void => {
+    window.open(urlDemo)
+  }
+  const navigateToCode = (): void => {
+    window.open(urlCode)
+  }
   return (
     <div className='card-project'>
       <div className='card-project__img'>
@@ -25,8 +33,18 @@ export default function CardProject ({
         </IconList>
           {children}
         <ButtonList>
-          <ButtonIcon icon={<FiCopy />}>Ver código</ButtonIcon>
-          <ButtonIcon icon={<FiLink />}>Ver demo</ButtonIcon>
+          <ButtonIcon
+            icon={<FiCopy />}
+            onClick={navigateToCode}
+          >
+            Ver código
+          </ButtonIcon>
+          <ButtonIcon
+            icon={<FiLink />}
+            onClick={navigateToDemo}
+          >
+            Ver demo
+          </ButtonIcon>
         </ButtonList>
       </div>
     </div>
@@ -38,4 +56,6 @@ interface PropTypes {
   title: string
   icons: ReactNode
   children: ReactNode
+  urlDemo: URL
+  urlCode: URL
 }

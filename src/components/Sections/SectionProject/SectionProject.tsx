@@ -22,8 +22,10 @@ export default function SectionProject (): ReactElement {
     <Section title='Proyectos'>
       <FlexList>
         <CardProject
-          img='/imgExample.jpg'
+          img='/project-1.jpg'
           title='LeonardoApi'
+          urlCode={new URL('https://github.com/leonardotorre18/api_rest_node')}
+          urlDemo={new URL('https://leonardoapi.onrender.com')}
           icons={
             <>
               <SiExpress />
@@ -41,8 +43,10 @@ export default function SectionProject (): ReactElement {
           <Param>La API está implementada en Node.js usando el framework Express. Se utiliza la base de datos NoSQL MongoDB para almacenar los datos. El código está escrito en TypeScript para mejorar la legibilidad y el mantenimiento.</Param>
         </CardProject>
         <CardProject
-          img='/imgExample.jpg'
+          img='/project-2.jpg'
           title='Antojitos Frit'
+          urlCode={new URL('https://github.com/leonardotorre18/antojitos-frit-react')}
+          urlDemo={new URL('https://antojitos-frit.netlify.app')}
           icons={
             <>
               <SiTypescript />

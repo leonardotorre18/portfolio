@@ -11,7 +11,11 @@ export default function Navbar (): ReactElement {
         <Logo />
         <div className='header__navbar__container'>
           <NavList />
-          <Button>Descargar CV</Button>
+          <Button
+            onClick={() => {
+              window.open('/assets/pdf/CV_Leonardo.pdf')
+            }}
+          >Descargar CV</Button>
         </div>
       </nav>
     </header>

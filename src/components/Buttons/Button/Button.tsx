@@ -3,16 +3,15 @@ import React, { type ReactNode, type ReactElement } from 'react'
 import './Button.scss'
 
 export default function Button ({
-  children
+  children,
+  onClick
 }: PropTypes): ReactElement {
-  const handlerClick = (): void => {
-    console.log('Click in button')
-  }
   return (
-    <button onClick={handlerClick} className='button'>{children}</button>
+    <button onClick={onClick ?? onClick} className='button'>{children}</button>
   )
 }
 
 interface PropTypes {
   children: ReactNode
+  onClick?: () => void
 }
