@@ -13,12 +13,33 @@ export default function Jumbotron (): ReactElement {
         <Image src='/imgExample.jpg' />
       </div>
       <div className='jumbotron__content'>
-        <H1>Desarrollador<br/>Web Frontend</H1>
+        <H1>Desarrollador<br />Web Frontend</H1>
         <p>Soy Leonardo, si estás buscando un desarrollador frontend talentoso y experimentado, no dudes en contactarme.</p>
         <ButtonList>
-          <ButtonIcon icon={<FiGithub />}>Github</ButtonIcon>
-          <ButtonIcon icon={<FiLinkedin />}>Linkedin</ButtonIcon>
-          <ButtonIcon icon={<FiInstagram />}>Instagram</ButtonIcon>
+          <ButtonIcon
+            icon={<FiGithub />}
+            onClick={() => {
+              window.open('https://github.com/leonardotorre18')
+            }}
+          >
+            Github
+          </ButtonIcon>
+          <ButtonIcon
+            icon={<FiLinkedin />}
+            onClick={() => {
+              window.open('https://linkedin.com/in/leonardo-torrealba')
+            }}
+          >
+            Linkedin
+          </ButtonIcon>
+          <ButtonIcon
+            icon={<FiInstagram />}
+            onClick={() => {
+              window.open('https://www.instagram.com/leonardo_torre18/')
+            }}
+          >
+            Instagram
+          </ButtonIcon>
         </ButtonList>
       </div>
     </section>

@@ -5,9 +5,10 @@ import './NavList.scss'
 export default function NavList (): ReactElement {
   return (
     <ul className='nav-list'>
-      <NavItem>Inicio</NavItem>
-      <NavItem>Experiencia</NavItem>
-      <NavItem>Proyectos</NavItem>
+      <NavItem id=''>Inicio</NavItem>
+      <NavItem id='experience'>Experiencia</NavItem>
+      <NavItem id='contact'>Contacto</NavItem>
+      <NavItem id='projects'>Proyectos</NavItem>
     </ul>
   )
 }

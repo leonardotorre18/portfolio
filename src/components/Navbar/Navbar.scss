@@ -7,6 +7,8 @@
   top: 0;
   left: 0;
   background-color: vars.$color-white;
+  box-shadow: vars.$shadow-regular;
+  z-index: 1000;
   &__navbar {
     display: flex;
     align-items: center;

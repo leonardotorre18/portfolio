@@ -1,0 +1,13 @@
+@use '../../../styles/variables.scss' as vars;
+
+.button-stroke {
+  padding: 8pt 32pt;
+  border-radius: 10px;
+  font-size: vars.$font-size-regular;
+  border-color: vars.$color-dark;
+  transition: border .3s ease-in;
+  &:hover {
+    border-color: vars.$color-secondary;
+    color: vars.$color-secondary;
+  }
+}

@@ -1,3 +1,5 @@
+@use '../../../styles/variables.scss' as vars;
+
 .card-project {
   display: flex;
   overflow: hidden;
@@ -19,6 +21,6 @@
 
   &:hover {
     transform: translateX(-1pt) translateY(-1pt);
-    box-shadow: 5px 5px 5px 0px #2e2e2e21;
+    box-shadow: vars.$shadow-regular;
   }
 }

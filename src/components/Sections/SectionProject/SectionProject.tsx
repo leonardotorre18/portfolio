@@ -19,7 +19,7 @@ import FlexList from '../../Lists/FlexList/FlexList'
 
 export default function SectionProject (): ReactElement {
   return (
-    <Section title='Proyectos'>
+    <Section title='Proyectos' id='projects'>
       <FlexList>
         <CardProject
           img='/project-1.jpg'

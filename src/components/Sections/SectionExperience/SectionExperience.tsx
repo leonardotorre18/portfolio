@@ -6,7 +6,7 @@ import Param from '../../Param/Param'
 
 export default function SectionExperience (): ReactElement {
   return (
-    <Section title='Experiencia'>
+    <Section title='Experiencia' id='experience'>
 
       <GridList>
         <CardExperience title='Freelancer' date='2020 enero - 2022 diciembre' >

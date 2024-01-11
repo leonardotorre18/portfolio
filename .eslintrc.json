@@ -19,6 +19,12 @@
     "rules": {
     },
     "ignorePatterns": [
-      "vite.config.ts"
-    ]
+      "vite.config.ts",
+      "*.scss"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
 }
