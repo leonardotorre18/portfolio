@@ -1,6 +1,10 @@
+@use '../../../styles/variables.scss' as vars;
+
 .card-experience {
   font-size: 12pt;
-  padding: 8pt 24pt;
+  padding: 24pt;
+  background-color: vars.$color-white;
+  border-radius: vars.$border-radius;
   & > .h1, 
   & > .h2, 
   & > .h3, 

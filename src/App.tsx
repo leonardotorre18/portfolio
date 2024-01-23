@@ -6,10 +6,12 @@ import Jumbotron from './components/Sections/Jumbotron/Jumbotron'
 import Main from './components/Main/Main'
 import SectionProject from './components/Sections/SectionProject/SectionProject'
 import Footer from './components/Footer/Footer'
+import Background from './components/Background/Background'
 
 function App (): ReactElement {
   return (
     <>
+      <Background />
       <Navbar />
 
       <Main>

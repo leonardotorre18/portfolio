@@ -4,6 +4,7 @@
   display: flex;
   overflow: hidden;
   border-radius: vars.$border-radius;
+  background-color: vars.$color-white;
   &__img {
     width: 30%;
     overflow: hidden;
