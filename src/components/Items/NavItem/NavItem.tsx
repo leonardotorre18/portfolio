@@ -5,18 +5,26 @@ export default function NavItem ({
   children,
   id
 }: PropTypes): ReactElement {
+  const clickHandler = (): void => {
+    const navbarHeight = document.getElementById('navbar')?.scrollHeight
+    console.log(navbarHeight)
+    setTimeout(() => {
+      window.scrollTo({
+        top: window.scrollY - (navbarHeight ?? 0)
+      })
+    }, 10)
+  }
+
   return (
-    <li className='nav-item'>
-      {
-        id !== undefined
-          ? <a href={`/#${id ?? id}`}>{children}</a>
-          : children
-      }
+    <li className='nav-item' onClick={clickHandler}>
+      <a href={`/#${id}`}>
+        {children}
+      </a>
     </li>
   )
 }
 
 interface PropTypes {
   children: ReactNode
-  id?: string
+  id: string
 }

@@ -6,8 +6,8 @@ export default function NavList (): ReactElement {
   return (
     <ul className='nav-list'>
       <NavItem id=''>Inicio</NavItem>
-      <NavItem id='experience'>Experiencia</NavItem>
       <NavItem id='contact'>Contacto</NavItem>
+      <NavItem id='experience'>Experiencia</NavItem>
       <NavItem id='projects'>Proyectos</NavItem>
     </ul>
   )
