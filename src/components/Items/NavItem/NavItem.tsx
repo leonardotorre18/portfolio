@@ -6,11 +6,11 @@ export default function NavItem ({
   id
 }: PropTypes): ReactElement {
   const clickHandler = (): void => {
-    const navbarHeight = document.getElementById('navbar')?.scrollHeight
-    console.log(navbarHeight)
+    // const navbarHeight = document.getElementById('navbar')?.scrollHeight
+    // console.log(navbarHeight)
     setTimeout(() => {
       window.scrollTo({
-        top: window.scrollY - (navbarHeight ?? 0)
+        top: window.scrollY - 67
       })
     }, 10)
   }

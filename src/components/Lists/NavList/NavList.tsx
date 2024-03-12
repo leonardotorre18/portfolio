@@ -1,5 +1,6 @@
 import React, { type ReactElement } from 'react'
 import NavItem from '../../Items/NavItem/NavItem'
+import Button from '../../Buttons/Button/Button'
 import './NavList.scss'
 
 export default function NavList (): ReactElement {
@@ -9,6 +10,13 @@ export default function NavList (): ReactElement {
       <NavItem id='contact'>Contacto</NavItem>
       <NavItem id='experience'>Experiencia</NavItem>
       <NavItem id='projects'>Proyectos</NavItem>
+      <Button
+        onClick={() => {
+          window.open('/assets/pdf/CV_Leonardo.pdf')
+        }}
+      >
+        Descargar CV
+      </Button>
     </ul>
   )
 }
