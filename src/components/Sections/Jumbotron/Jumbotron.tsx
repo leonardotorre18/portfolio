@@ -14,7 +14,7 @@ export default function Jumbotron (): ReactElement {
       </div>
       <div className='jumbotron__content'>
         <H1>Desarrollador<br />Web Frontend</H1>
-        <p>Soy Leonardo, si estás buscando un desarrollador frontend talentoso y experimentado, no dudes en contactarme.</p>
+        <p>+3 años de experiencia creando sitios web interactivos y responsivos. Me especializo en el área Frontend y poseo sólidos conocimientos del lado del Backend. Experiencia en equipos multiculturales y en crecimiento</p>
         <ButtonList>
           <ButtonIcon
             icon={<FiGithub />}

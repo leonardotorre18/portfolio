@@ -9,7 +9,7 @@ import ButtonStroke from '../../Buttons/ButtonStroke/ButtonStroke'
 export default function SectionContant (): ReactElement {
   return (
     <Section title='Ponte en contacto conmigo' id='contact'>
-      <Param>Soy Leonardo, programador apasionado al desarrollo de aplicaciones Web Modernas. Actualmente tengo un año de experiencia atendiendo a clientes de forma personal. Domino las principales herramientas y lenguajes de desarrollo más vanguardista. Soy FullStack, capacitado para el desarrollo de servidores web e interfaces gráficas para navegadores. Me especializo en el uso de JavaScript, el principal lenguaje de programación para la web, y sus principales herramientas como React, NodeJS y Express. Manejo de Bases de datos NoSql usando MongoDB. Actual estudiante de la carrera de Ingeniería de Sistemas en la universidad nacional de mi país. Estudio con la finalidad de impular mi carrera como profesional y reforzar mis habilidades tecnicas y blandas.</Param>
+      <Param>Soy Leonardo, programador apasionado al desarrollo de aplicaciones Web Modernas. Domino las principales herramientas y lenguajes de desarrollo más vanguardista. Capacitado para el desarrollo de servidores web e interfaces gráficas para navegadores. Me especializo en el uso de JavaScript, el principal lenguaje de programación para la web, y sus principales herramientas como React, NodeJS y Express. Manejo de Bases de datos NoSql usando MongoDB. Actual estudiante de la carrera de Ingeniería de Sistemas en la universidad nacional de mi país. Estudio con la finalidad de impular mi carrera como profesional y reforzar mis habilidades tecnicas y blandas.</Param>
 
       <ButtonList>
         <ButtonStroke>
