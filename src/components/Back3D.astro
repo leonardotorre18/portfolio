@@ -1,0 +1,84 @@
+---
+---
+
+<div id="Back3D"></div>
+
+<style>
+	#Back3D {
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+</style>
+
+<script>
+	import * as THREE from "three";
+
+	const container = document.getElementById("Back3D") || document.body;
+	let width = container.clientWidth || 0;
+	let height = container.clientHeight || 0;
+
+	// // Create a scene
+	const scene: THREE.Scene = new THREE.Scene();
+	scene.background = null;
+	// Create a camera
+	const camera = new THREE.PerspectiveCamera(40, width / height, 1, 5000,);
+	camera.position.z = 120 - (width / 90);
+
+	// create a renderer
+	const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setAnimationLoop(() => {
+		const time = performance.now() * 0.001; // Get time in seconds
+		const amplitude = 5; // Maximum distance the camera moves on the x-axis
+		const speed = 0.1; // Speed of the oscillation
+		camera.position.x = Math.sin(time * speed) * amplitude;
+		camera.rotation.z = Math.sin(time * speed) * 0.01;
+
+
+		camera.aspect = width / height;
+		camera.updateProjectionMatrix();
+		renderer.setSize(width, height);
+		renderer.render(scene, camera);
+	});
+	renderer.setClearColor(0x000000, 0); // Set the renderer to transparent
+
+	const cube = new THREE.Mesh(
+		new THREE.BoxGeometry(1, 1, 1), 
+		new THREE.MeshStandardMaterial({ color: 0xf2f2f2 })
+	);
+	cube.scale.set(30, 30, 30);
+	cube.rotation.x = 0.5;
+	cube.rotation.y = 0.5;
+	cube.position.set(-55, 0, 0);
+	scene.add(cube);
+
+	const cylinder = new THREE.Mesh(
+		new THREE.CylinderGeometry(1, 1, 2, 32),
+		new THREE.MeshStandardMaterial({ color: 0xf2f2f2 })
+	);
+	cylinder.scale.set(10, 20, 10);
+	cylinder.rotation.set(.5, 0, .5)
+	cylinder.position.set(30, 0, 0);
+	scene.add(cylinder);
+
+	// create light
+	const ambientLight = new THREE.AmbientLight(0xffffff, 1.7);
+	const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+	directionalLight.position.set(10, 10, 10);
+	scene.add(ambientLight);
+	scene.add(directionalLight);
+
+	container?.appendChild(renderer.domElement);
+
+	window.addEventListener("resize", () => {
+		width = container.clientWidth || 0;
+		height = container.clientHeight || 0;
+
+		camera.position.z = 120 - (width / 90);
+		camera.aspect = width / height;
+		camera.updateProjectionMatrix();
+		renderer.setSize(width, height);
+	});
+
+</script>

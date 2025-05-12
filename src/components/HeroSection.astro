@@ -1,0 +1,118 @@
+---
+import heroTexture from '../assets/HeroTexture.jpg';
+import heroImage from '../assets/hero.png';
+import Back3D from './Back3D.astro';
+import Front3D from './Front3D.astro';
+---
+<section class="hero-section">
+    <img src={heroTexture.src} class="hero-section__texture" alt="">
+    <div class="back3d">
+        <Back3D />
+    </div>
+
+    <div class="hero-section__container">
+        <div class="hero-section__container__content">
+            <p class="hero-section__container__content__name">Leonardo Torrealba</p>
+            <h1 class="hero-section__container__content__title">
+                Programador Web<span>Fronted</span>
+            </h1>
+            <div class="hero-section__container__content__footer">
+                <p>Programador apasionado al desarrollo de aplicaciones Web Modernas adaptadas a diferentes tecnologías y marcos de trabajo</p>
+                <div class="hero-section__container__content__footer__line"></div>
+                <p>Experto en Maquetación con HTML y CSS. Programación con Javascript, Typescript y sus principales herramientas para una interfaz web moderna, rápida, eficiente y optimizada</p>
+            </div>
+        </div>
+        <img src={heroImage.src} alt="">
+    </div>
+
+    <div class="front3d">
+        <Front3D />
+    </div>
+
+
+</section>
+
+<style>
+    .hero-section {
+        position: relative;
+        width: 100vw;
+        height: 600px;
+        overflow: hidden;
+        padding: 30px 60px;
+    }
+
+    .hero-section__texture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -10;
+        opacity: 0.2;
+    }
+    .back3d {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -5;
+    }
+    .front3d {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .hero-section__container {
+        display: flex;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    .hero-section__container__content {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 4px;
+    }
+    .hero-section__container__content__name {
+        font-size: 24px;
+        font-family: 'Montserrat Bold';
+    }
+    .hero-section__container__content__title {
+        font-size: 56px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        line-height: 100%;
+        margin-bottom: 2.35rem;
+        font-family: 'Montserrat Subrayada', sans-serif;
+        /* min-width: max-content; */
+    }
+    .hero-section__container__content__title span {
+        font-size: 94px;
+        font-weight: 700;
+    }
+    .hero-section__container__content__footer {
+        display: flex;
+        gap: 12px;
+    }
+    .hero-section__container__content__footer__line {
+        width: 2px;
+        background-color: #0d0d0d;
+        margin: 10px 0;
+    }
+    .hero-section__container img {
+        width: 100%;
+        /* height: 100%; */
+        flex-grow: 1;
+        min-width: 450px;
+        object-fit: contain;
+    }
+</style>
