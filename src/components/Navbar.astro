@@ -1,5 +1,43 @@
-<header class="navbar">
-    Navbar
+---
+interface Props {
+  routes: Route[]
+}
+
+interface Route {
+  url: string
+  name: string
+}
+
+const { routes } = Astro.props;
+
+---
+
+
+<header class="navbar" id="navbar">
+    <nav class="navbar__nav">
+        <div class="navbar__menu-icon">
+            <!-- { showMenu ? <RiCloseLargeFill /> : <RiMenuFill /> } -->
+        </div>
+
+        <span class="navbar__nav__logo">
+            Leonardo<br />
+            Torrealba
+        </span>
+
+        <ul
+            class={`
+          navbar__nav__list
+          ' show' : ' hidden'}
+          `}
+        >
+            { routes.map(({ name, url }) => 
+            <li
+            >
+              <a href={url}>{name}</a>
+            </li>
+          ) }
+        </ul>
+    </nav>
 </header>
 
 <style>
@@ -9,10 +47,116 @@
         left: 20px;
         padding: 10px 20px;
         width: calc(100% - 40px);
-        display: flex;
+        /* display: flex;
         align-items: center;
-        justify-content: center;
-        background-color: #f2f2f2;
+        justify-content: center; */
+        background-color: #f2f2f242;
+        backdrop-filter: blur(10px);
         z-index: 1000;
         border-radius: 30px;
+        padding: 24px var(--margin-page);
+        font-family: 'Montserrat Bold';
+        transition: background-color 0.3s ease-in-out;
     }
+    /* @media (max-width: 768px) {
+        .navbar {
+            padding-bottom: 10px;
+            position: relative;
+        }
+    } */
+    .navbar--background {
+        background-color: #f2f2f2e7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar__menu-icon {
+        display: none;
+    }
+
+    /* @media (max-width: 768px) {
+        .navbar__menu-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            padding: 14px;
+            box-shadow: inset 3px 3px 10px -7px #0d0d0d;
+            cursor: pointer;
+            position: relative;
+        }
+    } */
+
+    /* .navbar__menu-icon > svg {
+        width: 32px;
+        height: 32px;
+        color: #0d0d0d;
+    } */
+
+    .navbar__nav__logo {
+        cursor: pointer;
+        font-weight: 700;
+    }
+    /* @media (max-width: 768px) {
+        .navbar__nav__logo {
+            display: none;
+        }
+    } */
+
+    .navbar__nav__list {
+        display: flex;
+        gap: 32px;
+    }
+
+    /* @media (max-width: 768px) {
+        .navbar__nav__list {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            flex-direction: column;
+            padding: 60px;
+            align-items: center;
+            background-color: #fff;
+            transition: left 0.3s ease-in;
+        }
+        .navbar__nav__list.hidden {
+            left: -100%;
+        }
+        .navbar__nav__list.show {
+            left: 0;
+        }
+    } */
+
+    .navbar__nav__list a {
+        color: #0d0d0d;
+    }
+</style>
+
+<script>
+	import Lenis from "lenis";
+
+	// Initialize Lenis
+	const lenis = new Lenis({
+		autoRaf: true,
+	});
+    const navbar = document.querySelector("#navbar");
+
+	// Listen for the scroll event and log the event data
+	lenis.on("scroll", (e) => {
+		// const background = e.targetScroll >= (window.innerHeight / 2) - 100;
+        const background = e.targetScroll > 150;
+        console.log(background);
+        if (navbar && background) {
+            navbar.classList.add("navbar--background");
+        } else if (navbar) {
+            navbar.classList.remove("navbar--background");
+        }
+		// TargetScroll
+		// direction
+	});
+</script>

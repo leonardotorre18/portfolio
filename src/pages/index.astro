@@ -11,37 +11,60 @@ import ResponsiveImage from "../assets/bulb-dynamic-premium.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const skills = [
+  {
+    title: 'Programación Frontend',
+    description: 'Experto en transformar diseños a páginas web llenas de vida, atractivas e interactivas. Creación de código limpio y optimizado',
+    image: FrontendImage.src
+  },
+  {
+    title: 'Diseñador UX/UI',
+    description: 'Creación de interfaces web profesionales orientadas a la experiencia de usuarios',
+    image: DesignerImage.src
+  },
+  {
+    title: 'Programación Backend',
+    description: 'Desarrollo de aplicaciones web del lado del servidor que solucionen las necesidades del usuario',
+    image: SecurityImage.src
+  },
+  {
+    title: 'Diseño Web Responsivo',
+    description: 'Páginas optimizadas para adaptarse a todo tipo de pantallas (Móviles, Tabletas, Escritorio)',
+    image: ResponsiveImage.src
+  },
+  {
+    title: 'SEO, Velocidad y Eficiencia',
+    description: '¡Que tu página sea el primer resultado! Buenas prácticas orienadas a mejorar la respuesta de los motores de busqueta',
+    image: BackendImage.src
+  },
+
+]
+
+const projects = [
+  {
+    title: 'Api: Instituto Alfa',
+    description: 'Instituto Alfa Carabobo C.A me dio la oportunidad de crear una API que se ajustara a las necesidades de sus estudiantes para proyectos de programación Frontend. El proyecto fue creado empleando TypeScript con lenguaje de programación para definir la lógica de negocio. Express es el framework que atiende las peticiones web. Desplegado de forma automatizada en una máquina virtual de Azure a través de Gitlab CI. Para la documentación de la API elegí AstroJS para la interfaz de usuario. Dado que se enfoca para estudiantes que dan sus primeros pasos en el mundo del desarrollo web, la interfaz debía ser moderna, sencilla e intuitiva para favorecer su rápido aprendizaje',
+    image: '/project-apirest.jpg'
+  },
+]
+
 ---
 
 <Layout>
 	<HeroSection />
 
-	<section class="skills">
-		<SkillCard
-			title="Programación Frontend"
-			description="Experto en transformar diseños a páginas web llenas de vida, atractivas e interactivas. Creación de código limpio y optimizado"
-			image={FrontendImage.src}
-		/>
-		<SkillCard
-			title="Diseñador UX/UI"
-			description="Creación de interfaces web profesionales orientadas a la experiencia de usuarios"
-			image={DesignerImage.src}
-		/>
-		<SkillCard
-			title="Programación Backend"
-			description="Desarrollo de aplicaciones web del lado del servidor que solucionen las necesidades del usuario"
-			image={SecurityImage.src}
-		/>
-		<SkillCard
-			title="Diseño Web Responsivo"
-			description="Páginas optimizadas para adaptarse a todo tipo de pantallas (Móviles, Tabletas, Escritorio)"
-			image={ResponsiveImage.src}
-		/>
-		<SkillCard
-			title="SEO, Velocidad y Eficiencia"
-			description="¡Que tu página sea el primer resultado! Buenas prácticas orienadas a mejorar la respuesta de los motores de busqueta"
-			image={BackendImage.src}
-		/>
+	<section class="skills" id="skills">
+		{
+			skills.map((skill, index) => (
+				<SkillCard
+					key={index}
+					title={skill.title}
+					description={skill.description}
+					image={skill.image}
+				/>
+			))
+		}
 	</section>
 
 	<Footer />

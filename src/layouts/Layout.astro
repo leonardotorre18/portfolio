@@ -1,5 +1,25 @@
 ---
 import Navbar from "../components/Navbar.astro";
+
+const routes = [
+  {
+    name: 'Inicio',
+    url: '#'
+  },
+  {
+    name: 'Habilidades',
+    url: '#skills'
+  },
+//   {
+//     name: 'Proyectos',
+//     url: '#projects'
+//   },
+//   {
+//     name: 'Contacto',
+//     url: '#footer'
+//   }
+]
+
 ---
 
 <!doctype html>
@@ -12,7 +32,7 @@ import Navbar from "../components/Navbar.astro";
 		<title>Leonardo Torrealba - Programador Web</title>
 	</head>
 	<body>
-		<Navbar />
+		<Navbar routes={routes} />
 		<slot />
 	</body>
 </html>
