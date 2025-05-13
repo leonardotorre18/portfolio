@@ -1,0 +1,47 @@
+---
+    const { image, title, description } = Astro.props;
+---
+
+<div class="skill-card">
+    <img class="skill-card__image" src={image} />
+    <h3 class="skill-card__title">{ title }</h3>
+    <p>{ description }</p>
+    
+</div>
+
+<style>
+    .skill-card {
+        border-radius: 20px;
+        background-image: linear-gradient(
+            45deg,
+            rgba(202, 200, 200, 0.007),
+            rgba(202, 202, 202, 0.065)
+        );
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 35px 41px;
+        flex: 0 1 364px;
+        cursor: default;
+        color: #fff;
+    }
+    .skill-card__image {
+        background-color: #1e1e1eab;
+        border-radius: 20px;
+        width: 90px;
+        height: 90px;
+    }
+    .skill-card__image image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .skill-card__title {
+        font-size: 24px;
+        font-weight: bold;
+        font-family: 'Montserrat Bold', sans-serif;
+    }
+</style>

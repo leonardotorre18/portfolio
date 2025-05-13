@@ -1,6 +1,13 @@
 ---
-import HeroSection from '../components/HeroSection.astro';
-import Layout from '../layouts/Layout.astro';
+import Footer from "../components/Footer.astro";
+import HeroSection from "../components/HeroSection.astro";
+import SkillCard from "../components/SkillCard.astro";
+import Layout from "../layouts/Layout.astro";
+import FrontendImage from "../assets/computer-dynamic-premium.png";
+import SecurityImage from "../assets/sheild-dynamic-premium.png";
+import DesignerImage from "../assets/paint-kit-dynamic-premium.png";
+import BackendImage from "../assets/lab-dynamic-premium.png";
+import ResponsiveImage from "../assets/bulb-dynamic-premium.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -9,15 +16,64 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<HeroSection />
 
-	<section>
-
+	<section class="skills">
+		<SkillCard
+			title="Programación Frontend"
+			description="Experto en transformar diseños a páginas web llenas de vida, atractivas e interactivas. Creación de código limpio y optimizado"
+			image={FrontendImage.src}
+		/>
+		<SkillCard
+			title="Diseñador UX/UI"
+			description="Creación de interfaces web profesionales orientadas a la experiencia de usuarios"
+			image={DesignerImage.src}
+		/>
+		<SkillCard
+			title="Programación Backend"
+			description="Desarrollo de aplicaciones web del lado del servidor que solucionen las necesidades del usuario"
+			image={SecurityImage.src}
+		/>
+		<SkillCard
+			title="Diseño Web Responsivo"
+			description="Páginas optimizadas para adaptarse a todo tipo de pantallas (Móviles, Tabletas, Escritorio)"
+			image={ResponsiveImage.src}
+		/>
+		<SkillCard
+			title="SEO, Velocidad y Eficiencia"
+			description="¡Que tu página sea el primer resultado! Buenas prácticas orienadas a mejorar la respuesta de los motores de busqueta"
+			image={BackendImage.src}
+		/>
 	</section>
+
+	<Footer />
 </Layout>
 
 <style>
-	section {
+	section.skills {
 		background-color: #1e1e1e;
-		height: 1000px;
-		
+		/* height: 1000px; */
+		padding: 100px 60px;
+		display: flex;
+		flex-wrap: wrap;
+		/* align-items: center; */
+		justify-content: center;
+		gap: 20px;
+		/* display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 	}
 </style>
+
+<script>
+	import Lenis from "lenis";
+
+	// Initialize Lenis
+	const lenis = new Lenis({
+		autoRaf: true,
+	});
+
+	// Listen for the scroll event and log the event data
+	lenis.on("scroll", (e) => {
+		// console.log(e);
+		// TargetScroll
+		// direction
+	});
+</script>

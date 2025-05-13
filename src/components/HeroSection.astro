@@ -1,42 +1,75 @@
 ---
-import heroTexture from '../assets/HeroTexture.jpg';
-import heroImage from '../assets/hero.png';
-import Back3D from './Back3D.astro';
-import Front3D from './Front3D.astro';
+import heroTexture from "../assets/HeroTexture.jpg";
+import heroImage from "../assets/hero.png";
+import Back3D from "./Back3D.astro";
+import Front3D from "./Front3D.astro";
+import waveImage from "../assets/wave.png";
 ---
+
 <section class="hero-section">
-    <img src={heroTexture.src} class="hero-section__texture" alt="">
+    <img src={heroTexture.src} class="hero-section__texture" alt="" />
     <div class="back3d">
         <Back3D />
     </div>
 
     <div class="hero-section__container">
         <div class="hero-section__container__content">
-            <p class="hero-section__container__content__name">Leonardo Torrealba</p>
+            <p class="hero-section__container__content__name">
+                Leonardo Torrealba
+            </p>
             <h1 class="hero-section__container__content__title">
                 Programador Web<span>Fronted</span>
             </h1>
             <div class="hero-section__container__content__footer">
-                <p>Programador apasionado al desarrollo de aplicaciones Web Modernas adaptadas a diferentes tecnologías y marcos de trabajo</p>
-                <div class="hero-section__container__content__footer__line"></div>
-                <p>Experto en Maquetación con HTML y CSS. Programación con Javascript, Typescript y sus principales herramientas para una interfaz web moderna, rápida, eficiente y optimizada</p>
+                <p>
+                    Programador apasionado al desarrollo de aplicaciones Web
+                    Modernas adaptadas a diferentes tecnologías y marcos de
+                    trabajo
+                </p>
+                <div class="hero-section__container__content__footer__line">
+                </div>
+                <p>
+                    Experto en Maquetación con HTML y CSS. Programación con
+                    Javascript, Typescript y sus principales herramientas para
+                    una interfaz web moderna, rápida, eficiente y optimizada
+                </p>
             </div>
         </div>
-        <img src={heroImage.src} alt="">
+        <img src={heroImage.src} alt="" />
     </div>
 
     <div class="front3d">
         <Front3D />
     </div>
 
-
+    <div class="wave">
+        <img src={waveImage.src} alt="" />
+        <!-- <svg
+            id="wave"
+            style="transform:rotate(0deg); transition: 0.3s"
+            viewBox="0 0 1440 160"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            ><defs
+                ><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"
+                    ><stop stop-color="rgba(30, 30, 30, 1)" offset="0%"
+                    ></stop><stop stop-color="rgba(46, 46, 46, 1)" offset="100%"
+                    ></stop></linearGradient
+                ></defs
+            ><path
+                style="transform:translate(0, 0px); opacity:1"
+                fill="url(#sw-gradient-0)"
+                d="M0,48L60,64C120,80,240,112,360,122.7C480,133,600,123,720,101.3C840,80,960,48,1080,48C1200,48,1320,80,1440,98.7C1560,117,1680,123,1800,112C1920,101,2040,75,2160,58.7C2280,43,2400,37,2520,40C2640,43,2760,53,2880,58.7C3000,64,3120,64,3240,74.7C3360,85,3480,107,3600,117.3C3720,128,3840,128,3960,109.3C4080,91,4200,53,4320,40C4440,27,4560,37,4680,37.3C4800,37,4920,27,5040,29.3C5160,32,5280,48,5400,64C5520,80,5640,96,5760,85.3C5880,75,6000,37,6120,29.3C6240,21,6360,43,6480,66.7C6600,91,6720,117,6840,122.7C6960,128,7080,112,7200,109.3C7320,107,7440,117,7560,112C7680,107,7800,85,7920,64C8040,43,8160,21,8280,26.7C8400,32,8520,64,8580,80L8640,96L8640,160L8580,160C8520,160,8400,160,8280,160C8160,160,8040,160,7920,160C7800,160,7680,160,7560,160C7440,160,7320,160,7200,160C7080,160,6960,160,6840,160C6720,160,6600,160,6480,160C6360,160,6240,160,6120,160C6000,160,5880,160,5760,160C5640,160,5520,160,5400,160C5280,160,5160,160,5040,160C4920,160,4800,160,4680,160C4560,160,4440,160,4320,160C4200,160,4080,160,3960,160C3840,160,3720,160,3600,160C3480,160,3360,160,3240,160C3120,160,3000,160,2880,160C2760,160,2640,160,2520,160C2400,160,2280,160,2160,160C2040,160,1920,160,1800,160C1680,160,1560,160,1440,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z"
+            ></path></svg
+        > -->
+    </div>
 </section>
 
 <style>
     .hero-section {
         position: relative;
         width: 100vw;
-        height: 600px;
+        height: 100vh;
         overflow: hidden;
         padding: 30px 60px;
     }
@@ -71,6 +104,8 @@ import Front3D from './Front3D.astro';
         height: 100%;
         margin: 0 auto;
         max-width: 1200px;
+        align-items: flex-end;
+        padding-bottom: 5%;
     }
     .hero-section__container__content {
         display: flex;
@@ -80,10 +115,11 @@ import Front3D from './Front3D.astro';
         align-items: center;
         text-align: center;
         gap: 4px;
+        height: 100%;
     }
     .hero-section__container__content__name {
         font-size: 24px;
-        font-family: 'Montserrat Bold';
+        font-family: "Montserrat Bold";
     }
     .hero-section__container__content__title {
         font-size: 56px;
@@ -92,7 +128,7 @@ import Front3D from './Front3D.astro';
         flex-direction: column;
         line-height: 100%;
         margin-bottom: 2.35rem;
-        font-family: 'Montserrat Subrayada', sans-serif;
+        font-family: "Montserrat Subrayada", sans-serif;
         /* min-width: max-content; */
     }
     .hero-section__container__content__title span {
@@ -114,5 +150,18 @@ import Front3D from './Front3D.astro';
         flex-grow: 1;
         min-width: 450px;
         object-fit: contain;
+    }
+    .wave {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        z-index: 10;
+        height: 30%;
+    }
+    .wave img {
+        height: 100%;
+        width: 100%;
     }
 </style>
