@@ -147,16 +147,20 @@ const { routes } = Astro.props;
     const navbar = document.querySelector("#navbar");
 
 	// Listen for the scroll event and log the event data
-	lenis.on("scroll", (e) => {
-		// const background = e.targetScroll >= (window.innerHeight / 2) - 100;
-        const background = e.targetScroll > 150;
-        console.log(background);
+    const updateNavbarBackground = () => {
+        const background = lenis.targetScroll > 150;
         if (navbar && background) {
             navbar.classList.add("navbar--background");
         } else if (navbar) {
             navbar.classList.remove("navbar--background");
         }
-		// TargetScroll
-		// direction
-	});
+    };
+
+    // Check background on page load
+    updateNavbarBackground();
+
+    // Listen for the scroll event
+    lenis.on("scroll", (e) => {
+        updateNavbarBackground();
+    });
 </script>
