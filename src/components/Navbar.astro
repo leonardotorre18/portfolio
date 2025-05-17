@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 interface Props {
   routes: Route[]
 }
@@ -10,25 +12,24 @@ interface Route {
 
 const { routes } = Astro.props;
 
+let showMenu: boolean = false;
+
 ---
 
 
 <header class="navbar" id="navbar">
     <nav class="navbar__nav">
-        <div class="navbar__menu-icon">
-            <!-- { showMenu ? <RiCloseLargeFill /> : <RiMenuFill /> } -->
-        </div>
-
         <span class="navbar__nav__logo">
             Leonardo<br />
             Torrealba
         </span>
 
         <ul
-            class={`
-          navbar__nav__list
-          ' show' : ' hidden'}
-          `}
+            id="list"
+            class:list={[
+                'navbar__nav__list',
+                showMenu ? '' : 'hidden'
+            ]}
         >
             { routes.map(({ name, url }) => 
             <li
@@ -37,6 +38,10 @@ const { routes } = Astro.props;
             </li>
           ) }
         </ul>
+
+        <div class="navbar__menu-icon" id="menu">
+            <Icon name="heroicons-outline:menu" >
+        </div>
     </nav>
 </header>
 
@@ -58,15 +63,16 @@ const { routes } = Astro.props;
         font-family: 'Montserrat Bold';
         transition: background-color 0.3s ease-in-out;
     }
-    /* @media (max-width: 768px) {
-        .navbar {
-            padding-bottom: 10px;
-            position: relative;
-        }
-    } */
     .navbar--background {
-        background-color: #f2f2f2e7;
+        background-color: #f2f2f2;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 768px) {
+        .navbar, .navbar--background {
+            /* padding-bottom: 10px;
+            position: relative; */
+            background-color: #f2f2f2;
+        }
     }
 
     .navbar__nav {
@@ -79,24 +85,24 @@ const { routes } = Astro.props;
         display: none;
     }
 
-    /* @media (max-width: 768px) {
+    @media (max-width: 768px) {
         .navbar__menu-icon {
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 100%;
-            padding: 14px;
+            padding: 10px;
             box-shadow: inset 3px 3px 10px -7px #0d0d0d;
             cursor: pointer;
             position: relative;
         }
-    } */
+    }
 
-    /* .navbar__menu-icon > svg {
+    .navbar__menu-icon > svg {
         width: 32px;
         height: 32px;
         color: #0d0d0d;
-    } */
+    }
 
     .navbar__nav__logo {
         cursor: pointer;
@@ -113,24 +119,28 @@ const { routes } = Astro.props;
         gap: 32px;
     }
 
-    /* @media (max-width: 768px) {
+    @media (max-width: 768px) {
         .navbar__nav__list {
             position: absolute;
-            top: 100%;
             width: 100%;
             flex-direction: column;
-            padding: 60px;
             align-items: center;
-            background-color: #fff;
-            transition: left 0.3s ease-in;
+            background-color: #f2f2f2;
+            transition: clip-path 0.3s ease-in, opacity 0.3s ease-in, top 0.3s ease-in;
+            border-radius: 30px;
+            left: 0;
+            padding: 60px;
+            clip-path: inset(0 0 0 0);
+            opacity: 1;
+            top: calc(100% + 16px);
         }
         .navbar__nav__list.hidden {
-            left: -100%;
+            top: 100%;
+            clip-path: inset(0 0 100% 0);
+            opacity: 0;
+            pointer-events: none;
         }
-        .navbar__nav__list.show {
-            left: 0;
-        }
-    } */
+    }
 
     .navbar__nav__list a {
         color: #0d0d0d;
@@ -138,7 +148,8 @@ const { routes } = Astro.props;
 </style>
 
 <script>
-	import Lenis from "lenis";
+	import type { literal } from "astro:schema";
+import Lenis from "lenis";
 
 	// Initialize Lenis
 	const lenis = new Lenis({
@@ -162,5 +173,17 @@ const { routes } = Astro.props;
     // Listen for the scroll event
     lenis.on("scroll", (e) => {
         updateNavbarBackground();
+    });
+
+    const toggleMenu = () => {
+        document.getElementById('list')
+            ?.classList.toggle('hidden')
+    }
+
+    document.getElementById('menu')?.addEventListener('click', toggleMenu)
+
+    const list = document.querySelectorAll('#list>li')
+    list.forEach(li => {
+        li.addEventListener('click', toggleMenu)
     });
 </script>
