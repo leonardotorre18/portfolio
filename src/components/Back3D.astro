@@ -23,7 +23,8 @@
 	scene.background = null;
 	// Create a camera
 	const camera = new THREE.PerspectiveCamera(40, width / height, 1, 5000,);
-	camera.position.z = 120 - (width / 90);
+	// camera.position.z = 120 - (width / 90);
+	camera.position.z = width > 768 ? 120 : 170;
 
 	// create a renderer
 	const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
@@ -50,7 +51,7 @@
 	cube.scale.set(30, 30, 30);
 	cube.rotation.x = 0.5;
 	cube.rotation.y = 0.5;
-	cube.position.set(-55, 0, 0);
+	cube.position.set(-40, 0, 0);
 	scene.add(cube);
 
 	const cylinder = new THREE.Mesh(
@@ -75,7 +76,14 @@
 		width = container.clientWidth || 0;
 		height = container.clientHeight || 0;
 
-		camera.position.z = 120 - (width / 90);
+		camera.position.z = width > 768 ? 120 : 170;
+		if (width > 768) {
+			cylinder.position.x = 30
+			cube.position.x = -40
+		} else {
+			cylinder.position.x = 28
+			cube.position.x = -35
+		}
 		camera.aspect = width / height;
 		camera.updateProjectionMatrix();
 		renderer.setSize(width, height);

@@ -24,7 +24,7 @@
 	scene.background = null;
 	// Create a camera
 	const camera = new THREE.PerspectiveCamera(40, width / height, 1, 5000,);
-	camera.position.z = 120 - (width / 90);
+	camera.position.z = width > 768 ? 120 : 170;
 
 	// create a renderer
 	const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
@@ -53,7 +53,7 @@
 		new THREE.MeshStandardMaterial({ color: 0xf2f2f2 })
 	);
 	sphere.scale.set(50, 50, 50);
-	sphere.position.set(60, -25, 10);
+	sphere.position.set(55, -25, 10);
 	scene.add(sphere);
 
 	// create light
@@ -69,7 +69,14 @@
 		width = container.clientWidth || 0;
 		height = container.clientHeight || 0;
 
-		camera.position.z = 120 - (width / 90);
+		camera.position.z = width > 768 ? 120 : 170;
+		if (width > 768) {
+			sphere.position.x = 55
+			sphere.position.y = -25
+		} else {
+			sphere.position.x = 50
+			sphere.position.y = -30
+		}
 		camera.aspect = width / height;
 		camera.updateProjectionMatrix();
 		renderer.setSize(width, height);

@@ -8,6 +8,7 @@ import SecurityImage from "../assets/sheild-dynamic-premium.png";
 import DesignerImage from "../assets/paint-kit-dynamic-premium.png";
 import BackendImage from "../assets/lab-dynamic-premium.png";
 import ResponsiveImage from "../assets/bulb-dynamic-premium.png";
+import ProjectCard from "../components/ProjectCard.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -48,9 +49,11 @@ const skills = [
 const projects = [
 	{
 		title: "Api: Instituto Alfa",
-		description:
-			"Instituto Alfa Carabobo C.A me dio la oportunidad de crear una API que se ajustara a las necesidades de sus estudiantes para proyectos de programación Frontend. El proyecto fue creado empleando TypeScript con lenguaje de programación para definir la lógica de negocio. Express es el framework que atiende las peticiones web. Desplegado de forma automatizada en una máquina virtual de Azure a través de Gitlab CI. Para la documentación de la API elegí AstroJS para la interfaz de usuario. Dado que se enfoca para estudiantes que dan sus primeros pasos en el mundo del desarrollo web, la interfaz debía ser moderna, sencilla e intuitiva para favorecer su rápido aprendizaje",
+		description: "Instituto Alfa Carabobo C.A me dio la oportunidad de crear una API que se ajustara a las necesidades de sus estudiantes para proyectos de programación Frontend. El proyecto fue creado empleando TypeScript con lenguaje de programación para definir la lógica de negocio. Express es el framework que atiende las peticiones web. Desplegado de forma automatizada en una máquina virtual de Azure a través de Gitlab CI. Para la documentación de la API elegí AstroJS para la interfaz de usuario. Dado que se enfoca para estudiantes que dan sus primeros pasos en el mundo del desarrollo web, la interfaz debía ser moderna, sencilla e intuitiva para favorecer su rápido aprendizaje",
 		image: "/project-apirest.jpg",
+		url: {
+			demo: "https://api.institutoalfa.org/",
+		}
 	},
 ];
 ---
@@ -74,6 +77,21 @@ const projects = [
 		</div>
 	</section>
 
+	<section class="projects" id="projects">
+		<h2 class="projects__title">Proyectos</h2>
+		<div>
+			{
+				projects.map((project) => (
+					<ProjectCard
+						title={project.title}
+						url={project.url}
+						description={project.description}
+					/>
+				))
+			}
+		</div>
+	</section>
+
 	<Footer />
 </Layout>
 
@@ -87,7 +105,7 @@ const projects = [
 			padding-top: 36px;
 		}
 	}
-	.skills__title {
+	.skills__title, .projects__title {
 		text-align: center;
 		font-size: 36px;
 		font-weight: bold;
@@ -103,6 +121,9 @@ const projects = [
 		gap: 20px;
 		/* display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+	}
+	section.projects {
+		padding-top: 60px;
 	}
 </style>
 
