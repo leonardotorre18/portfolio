@@ -1,0 +1,70 @@
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Docker.gitlab-ci.yml
+
+# Build a Docker image with CI/CD and push to the GitLab registry.
+# Docker-in-Docker documentation: https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
+#
+# This template uses one generic job with conditional builds
+# for the default branch and all other (MR) branches.
+
+stages: 
+  - docker-build
+  - docker-deploy
+
+docker-build:
+  # Use the official docker image.
+  image: docker:cli
+  stage: docker-build
+  services:
+    - docker:dind
+  variables:
+    DOCKER_IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  # All branches are tagged with $DOCKER_IMAGE_NAME (defaults to commit ref slug)
+  # Default branch is also tagged with `latest`
+  script:
+    - docker build --build-arg WHATSAPP_URL="$WHATSAPP_URL" --build-arg INSTAGRAM_URL="$INSTAGRAM_URL" --build-arg LINKEDIN_URL="$LINKEDIN_URL" --build-arg GITHUB_URL="$GITHUB_URL" --pull -t "$DOCKER_IMAGE_NAME" .
+    - docker push "$DOCKER_IMAGE_NAME"
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        docker tag "$DOCKER_IMAGE_NAME" "$CI_REGISTRY_IMAGE:latest"
+        docker push "$CI_REGISTRY_IMAGE:latest"
+      fi
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH # Solo en la rama principal
+      exists:
+        - Dockerfile
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH # En otras ramas
+      when: never # No ejecutar en otras ramas si no existe el dockerfile
+    - if: $CI_COMMIT_BRANCH
+      exists:
+        - Dockerfile
+
+docker-deploy:
+  image: kroniak/ssh-client
+  stage: docker-deploy
+  before_script:
+    - chmod 600 $SSH_PRIVATE_KEY
+    - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY "${SSH_USER}@${SSH_HOST}" "docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY"
+  script:
+    # Set right chmod on SSH key file
+    - chmod 400 $SSH_PRIVATE_KEY
+    - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY "${SSH_USER}@${SSH_HOST}" "docker stop $DOCKER_CONTAINER_TAG"
+    - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY "${SSH_USER}@${SSH_HOST}" "docker rm $DOCKER_CONTAINER_TAG"
+
+    - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY "${SSH_USER}@${SSH_HOST}" "docker image inspect $CI_REGISTRY_IMAGE >/dev/null 2>&1 && docker image rm $CI_REGISTRY_IMAGE || echo 'Image not found'"
+    - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY "${SSH_USER}@${SSH_HOST}" "docker pull $CI_REGISTRY_IMAGE"
+    - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY "${SSH_USER}@${SSH_HOST}" "docker run -d --name $DOCKER_CONTAINER_TAG -p3000:80 $CI_REGISTRY_IMAGE"
+    # - scp -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY -rp dist/* "${SSH_USER}@${SSH_HOST}:/var/www/${NGINX_DOMAIN_FOLDER}"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH # Solo en la rama principal
+      exists:
+        - Dockerfile
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH # En otras ramas
+      when: never # No ejecutar en otras ramas si no existe el dockerfile
+    - if: $CI_COMMIT_BRANCH
+      exists:
+        - Dockerfile
