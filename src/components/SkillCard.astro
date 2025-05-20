@@ -1,12 +1,18 @@
 ---
-    const { image, title, description } = Astro.props;
+interface Props {
+    image: string
+    title: string
+    description: string
+    key: number
+}
+
+const { image, title, description, key } = Astro.props;
 ---
 
-<div class="skill-card">
+<div class="skill-card" data-key={key}>
     <img class="skill-card__image" src={image} />
-    <h3 class="skill-card__title">{ title }</h3>
-    <p>{ description }</p>
-    
+    <h3 class="skill-card__title">{title}</h3>
+    <p>{description}</p>
 </div>
 
 <style>
@@ -42,6 +48,33 @@
     .skill-card__title {
         font-size: 24px;
         font-weight: bold;
-        font-family: 'Montserrat Bold', sans-serif;
+        font-family: "Montserrat Bold", sans-serif;
     }
 </style>
+
+<script>
+    import gsap from 'gsap'
+    import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const cards = gsap.utils.toArray<HTMLElement>('.skill-card')
+
+    console.log(cards)
+
+    cards.map(card => {
+        gsap.from(card, {
+            opacity: 0,
+            x: -30,
+            scrollTrigger: {
+                trigger: card,
+                start: 'top center',
+                end: 'bottom center',
+                scrub: true,
+                pin: false,
+                // markers: true,
+            }
+        })
+    })
+
+</script>
