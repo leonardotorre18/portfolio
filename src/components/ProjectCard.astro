@@ -70,6 +70,7 @@ const { title, url, description } = Astro.props;
     @media (max-width: 768px) {
         .project-card__content {
             width: 100%;
+            flex-grow: 1;
         }
     }
     .project-card__content__title {
@@ -117,7 +118,9 @@ const { title, url, description } = Astro.props;
     }
     @media (max-width: 768px) {
         .project-card__image {
+            height: auto;
             width: 100%;
+            flex-grow: 1;
         }
     }
     .project-card__image iframe {
@@ -127,3 +130,32 @@ const { title, url, description } = Astro.props;
         pointer-events: none;
     }
 </style>
+
+<script>
+    import gsap from 'gsap'
+    import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const cards = gsap.utils.toArray<HTMLElement>('.project-card')
+
+    console.log(cards)
+
+    // gsap.from('.project-card', {
+    //     opacity: 0,
+    //     x: -30,
+    //     scrollTrigger: {
+    //         trigger: '.project-card',
+    //         start: 'left 70%',
+    //         end: 'right 90%',
+    //         scrub: true,
+    //         pin: false,
+    //         markers: true,
+    //         horizontal: true,
+    //         scroller: window // o especifica el contenedor si no es window
+    //     }
+    // })
+    // cards.map(card => {
+    // })
+
+</script>

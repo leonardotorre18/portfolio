@@ -53,6 +53,18 @@ const projects = [
 		url: {
 			demo: "https://api.institutoalfa.org/",
 		}
+	},{
+		title: "Api: Instituto Alfa",
+		description: "Instituto Alfa Carabobo C.A me dio la oportunidad de crear una API que se ajustara a las necesidades de sus estudiantes para proyectos de programación Frontend. El proyecto fue creado empleando TypeScript con lenguaje de programación para definir la lógica de negocio. Express es el framework que atiende las peticiones web. Desplegado de forma automatizada en una máquina virtual de Azure a través de Gitlab CI. Para la documentación de la API elegí AstroJS para la interfaz de usuario. Dado que se enfoca para estudiantes que dan sus primeros pasos en el mundo del desarrollo web, la interfaz debía ser moderna, sencilla e intuitiva para favorecer su rápido aprendizaje",
+		url: {
+			demo: "https://api.institutoalfa.org/",
+		}
+	},{
+		title: "Api: Instituto Alfa",
+		description: "Instituto Alfa Carabobo C.A me dio la oportunidad de crear una API que se ajustara a las necesidades de sus estudiantes para proyectos de programación Frontend. El proyecto fue creado empleando TypeScript con lenguaje de programación para definir la lógica de negocio. Express es el framework que atiende las peticiones web. Desplegado de forma automatizada en una máquina virtual de Azure a través de Gitlab CI. Para la documentación de la API elegí AstroJS para la interfaz de usuario. Dado que se enfoca para estudiantes que dan sus primeros pasos en el mundo del desarrollo web, la interfaz debía ser moderna, sencilla e intuitiva para favorecer su rápido aprendizaje",
+		url: {
+			demo: "https://api.institutoalfa.org/",
+		}
 	},
 ];
 ---
@@ -78,7 +90,7 @@ const projects = [
 
 	<section class="projects" id="projects">
 		<h2 class="projects__title">Proyectos</h2>
-		<div>
+		<div class="projects__container">
 			{
 				projects.map((project) => (
 					<ProjectCard
@@ -111,33 +123,43 @@ const projects = [
 		font-family: 'Montserrat Bold';
 	}
 	.skills__container {
-		/* height: 1000px; */
 		padding: 100px 60px;
 		display: flex;
 		flex-wrap: wrap;
-		/* align-items: center; */
 		justify-content: center;
 		gap: 20px;
-		/* display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 	}
 	section.projects {
-		padding-top: 60px;
+		padding: 60px 0 30px 0;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		/* overflow: hidden; */
+	}
+	.projects__container {
+		flex-grow: 1;
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 100%;
+		/* overflow-x: scroll; */
 	}
 </style>
-
 <script>
-	import Lenis from "lenis";
 
-	// Initialize Lenis
-	const lenis = new Lenis({
-		autoRaf: true,
-	});
+	import gsap from "gsap"
 
-	// Listen for the scroll event and log the event data
-	lenis.on("scroll", (e) => {
-		// console.log(e);
-		// TargetScroll
-		// direction
-	});
+	const project_container = document.querySelector('#projects')
+	const project_card = gsap.utils.toArray<HTMLElement>('.project-card')
+
+	gsap.to(project_card, {
+		xPercent: -100 * (project_card.length - 1),
+		scrollTrigger: {
+			trigger: project_container,
+			pin: true,
+			scrub: 3,
+			// markers: true,
+			start: 'center+=20 center',
+			end: 'bottom+=20 top',
+		}
+	})
 </script>

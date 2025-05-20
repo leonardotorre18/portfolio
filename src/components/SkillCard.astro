@@ -60,8 +60,6 @@ const { image, title, description, key } = Astro.props;
 
     const cards = gsap.utils.toArray<HTMLElement>('.skill-card')
 
-    console.log(cards)
-
     cards.map(card => {
         gsap.from(card, {
             opacity: 0,
