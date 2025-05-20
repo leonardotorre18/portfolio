@@ -50,7 +50,6 @@ let showMenu: boolean = false;
         position: fixed;
         top: 20px;
         left: 20px;
-        padding: 10px 20px;
         width: calc(100% - 40px);
         /* display: flex;
         align-items: center;
@@ -59,9 +58,14 @@ let showMenu: boolean = false;
         backdrop-filter: blur(10px);
         z-index: 1000;
         border-radius: 30px;
-        padding: 24px var(--margin-page);
+        padding: 24px 30px;
         font-family: 'Montserrat Bold';
         transition: background-color 0.3s ease-in-out;
+    }
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 10px 30px;
+        }
     }
     .navbar--background {
         background-color: #f2f2f2;
